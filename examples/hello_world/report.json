@@ -1,0 +1,33 @@
+{
+  "template": "Example Project_Template.docx",
+  "report_ids": ["A", "B"],
+  "output_pattern": "Example Project_{report_id}.docx",
+  "sources": {
+    "ages": "Results/Comp{report_id}_Table1.csv",
+    "age_chart": "Results/Comp{report_id}_Figure1.csv",
+    "gender": "Results/Comp{report_id}_Figure2.csv"
+  },
+  "elements": {
+    "@#$_number001": {"type": "text", "value": "{report_id}"},
+    "@#$_number002": {"type": "text", "source": "ages", "sum_column": "Number of People"},
+    "@#$_table001": {
+      "type": "table", "source": "ages", "headers": ["Age", "Count"],
+      "columns": ["Age", "Number of People"], "column_widths_inches": [2.5, 2.5],
+      "title": "Count of employees by age."
+    },
+    "@#$_chart001": {
+      "type": "chart", "source": "age_chart", "label_column": "Age",
+      "value_column": "Percent of People", "percent": true,
+      "title": "Employees by Age", "width_inches": 5.5
+    },
+    "@#$_chart002": {
+      "type": "chart", "source": "gender", "label_column": "Gender",
+      "value_column": "Percent of People", "percent": true,
+      "title": "Employees by Gender", "width_inches": 5.5
+    },
+    "@#$_bullet001": {
+      "type": "bullets", "source": "gender", "lowercase_columns": ["Gender"],
+      "item_template": "There are {Number of People} {Gender}s in company {report_id}"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trw-engine"
+version = "0.1.0"
+description = "Template-driven Word report generation without desktop Office"
+requires-python = ">=3.11"
+dependencies = ["python-docx==1.2.0", "matplotlib==3.10.8"]
+
+[project.scripts]
+trw = "trw.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["trw*"]
