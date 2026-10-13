@@ -266,25 +266,25 @@ are lexical evidence, not proof that a routine is reachable or unused.
 
 | Routine (original lines) | Responsibility | Status | Python coverage / remaining gap |
 |---|---|---|---|
-| `.ProcessJobOne` (2–37) | Save workbook; create TRWHubToKernel.xlsx with hub path/name and RunOne; launch external kernel. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
-| `.ProcessJobMany` (38–72) | Save workbook; create TRWHubToKernel.xlsx with RunMany; launch external kernel. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
-| `.ShellMe` (73–94) | Launch Report Writer Kernel.exe from configured folder through Windows Shell. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
+| `ProcessReports.ProcessJobOne` (2–37) | Save workbook; create TRWHubToKernel.xlsx with hub path/name and RunOne; launch external kernel. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
+| `ProcessReports.ProcessJobMany` (38–72) | Save workbook; create TRWHubToKernel.xlsx with RunMany; launch external kernel. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
+| `ProcessReports.ShellMe` (73–94) | Launch Report Writer Kernel.exe from configured folder through Windows Shell. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
 
 ## The Report Writer - Finished Example.xlsm/ProcessReports.bas
 
 | Routine (original lines) | Responsibility | Status | Python coverage / remaining gap |
 |---|---|---|---|
-| `.ProcessJobOne` (2–37) | Save workbook; create TRWHubToKernel.xlsx with hub path/name and RunOne; launch external kernel. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
-| `.ProcessJobMany` (38–72) | Save workbook; create TRWHubToKernel.xlsx with RunMany; launch external kernel. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
-| `.ShellMe` (73–94) | Launch Report Writer Kernel.exe from configured folder through Windows Shell. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
+| `ProcessReports.ProcessJobOne` (2–37) | Save workbook; create TRWHubToKernel.xlsx with hub path/name and RunOne; launch external kernel. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
+| `ProcessReports.ProcessJobMany` (38–72) | Save workbook; create TRWHubToKernel.xlsx with RunMany; launch external kernel. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
+| `ProcessReports.ShellMe` (73–94) | Launch Report Writer Kernel.exe from configured folder through Windows Shell. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
 
 ## Demo Project 1.xlsm/TRW.bas
 
 | Routine (original lines) | Responsibility | Status | Python coverage / remaining gap |
 |---|---|---|---|
-| `.test` (2–11) | Display a Running Excel Macros diagnostic message. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
-| `.AddMacros` (12–15) | User-defined macro hook invoked by CommonCore; supplied demo body contains only a commented test call. | **Held** | H02: runtime VBA extension contract unimplemented. |
-| `.chartidx` (16–30) | Display selected Excel chart name stripped of worksheet prefix. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
+| `TRW.test` (2–11) | Display a Running Excel Macros diagnostic message. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
+| `TRW.AddMacros` (12–15) | User-defined macro hook invoked by CommonCore; supplied demo body contains only a commented test call. | **Held** | H02: runtime VBA extension contract unimplemented. |
+| `TRW.chartidx` (16–30) | Display selected Excel chart name stripped of worksheet prefix. | **Held** | H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package. |
 
 ## Files with no routine declarations
 

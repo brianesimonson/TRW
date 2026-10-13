@@ -254,6 +254,7 @@ def main():
             if row['name'] not in vba_desc:
                 raise ValueError('Undocumented VBA routine: ' + row['id'])
             ledger.append(dict(row, file=workbook['name'] + '/' + row['file'], language='VBA',
+                               scope=Path(row['file']).stem,
                                purpose=vba_desc[row['name']], status='Held', python_replacement='',
                                gap=('H02: runtime VBA extension contract unimplemented.' if row['name'] == 'AddMacros'
                                     else 'H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package.'),
@@ -262,7 +263,7 @@ def main():
     columns = ['id', 'language', 'file', 'scope', 'name', 'kind', 'start_line', 'end_line',
                'signature', 'purpose', 'status', 'python_replacement', 'gap', 'verification']
     with (DOCS / 'conversion-ledger.csv').open('w', newline='', encoding='utf-8') as handle:
-        writer = csv.DictWriter(handle, fieldnames=columns, extrasaction='ignore')
+        writer = csv.DictWriter(handle, fieldnames=columns, extrasaction='ignore', lineterminator='\n')
         writer.writeheader()
         writer.writerows(ledger)
     lines = ['# Function-by-function conversion ledger', '',

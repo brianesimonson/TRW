@@ -3674,7 +3674,7 @@
   {
     "id": "vba:The Report Writer - Blank Shell.xlsm:ProcessReports.bas:2",
     "file": "The Report Writer - Blank Shell.xlsm/ProcessReports.bas",
-    "scope": "",
+    "scope": "ProcessReports",
     "name": "ProcessJobOne",
     "kind": "Sub",
     "start_line": 2,
@@ -3696,7 +3696,7 @@
   {
     "id": "vba:The Report Writer - Blank Shell.xlsm:ProcessReports.bas:38",
     "file": "The Report Writer - Blank Shell.xlsm/ProcessReports.bas",
-    "scope": "",
+    "scope": "ProcessReports",
     "name": "ProcessJobMany",
     "kind": "Sub",
     "start_line": 38,
@@ -3718,7 +3718,7 @@
   {
     "id": "vba:The Report Writer - Blank Shell.xlsm:ProcessReports.bas:73",
     "file": "The Report Writer - Blank Shell.xlsm/ProcessReports.bas",
-    "scope": "",
+    "scope": "ProcessReports",
     "name": "ShellMe",
     "kind": "Sub",
     "start_line": 73,
@@ -3738,7 +3738,7 @@
   {
     "id": "vba:The Report Writer - Finished Example.xlsm:ProcessReports.bas:2",
     "file": "The Report Writer - Finished Example.xlsm/ProcessReports.bas",
-    "scope": "",
+    "scope": "ProcessReports",
     "name": "ProcessJobOne",
     "kind": "Sub",
     "start_line": 2,
@@ -3760,7 +3760,7 @@
   {
     "id": "vba:The Report Writer - Finished Example.xlsm:ProcessReports.bas:38",
     "file": "The Report Writer - Finished Example.xlsm/ProcessReports.bas",
-    "scope": "",
+    "scope": "ProcessReports",
     "name": "ProcessJobMany",
     "kind": "Sub",
     "start_line": 38,
@@ -3782,7 +3782,7 @@
   {
     "id": "vba:The Report Writer - Finished Example.xlsm:ProcessReports.bas:73",
     "file": "The Report Writer - Finished Example.xlsm/ProcessReports.bas",
-    "scope": "",
+    "scope": "ProcessReports",
     "name": "ShellMe",
     "kind": "Sub",
     "start_line": 73,
@@ -3802,7 +3802,7 @@
   {
     "id": "vba:Demo Project 1.xlsm:TRW.bas:2",
     "file": "Demo Project 1.xlsm/TRW.bas",
-    "scope": "",
+    "scope": "TRW",
     "name": "test",
     "kind": "Sub",
     "start_line": 2,
@@ -3822,7 +3822,7 @@
   {
     "id": "vba:Demo Project 1.xlsm:TRW.bas:12",
     "file": "Demo Project 1.xlsm/TRW.bas",
-    "scope": "",
+    "scope": "TRW",
     "name": "AddMacros",
     "kind": "Sub",
     "start_line": 12,
@@ -3842,7 +3842,7 @@
   {
     "id": "vba:Demo Project 1.xlsm:TRW.bas:16",
     "file": "Demo Project 1.xlsm/TRW.bas",
-    "scope": "",
+    "scope": "TRW",
     "name": "chartidx",
     "kind": "Sub",
     "start_line": 16,
