@@ -44,10 +44,14 @@ def main():
             'extracted, not executed. Formula counts include shared formulas expanded by',
             'openpyxl. Reading a cached result is not formula evaluation or conversion.', '',
             'There are 65 sheet occurrences and 26 distinct sheet names. No hidden sheet is',
-            'silently excluded. Generic Python report elements do not mean their source',
+            'silently excluded. Current workbook coverage is recorded below; original inventory metadata does not change. Generic elements alone do not mean their source',
             'workbook tabs have been converted.', '', '## All tab roles', '',
             '| Tab | Original responsibility | Conversion coverage |', '|---|---|---|']
+    coverage_updates = json.loads((DOCS / "workbook-coverage.json").read_text())
+    if set(coverage_updates) != actual:
+        raise ValueError("Coverage update mismatch")
     for name, (role, coverage) in ROLES.items():
+        coverage = coverage_updates[name]
         text.append(f'| `{name}` | {role} | {coverage} |')
     text += ['', '## Per-workbook inventory', '',
              'Formula function names below describe observed formulas, not a supported Python',
@@ -72,25 +76,25 @@ def main():
              'Coordinates are taken from the original VB.NET accesses. Unsupported options',
              'must be reported before generation; silently ignoring an On flag is not parity.', '',
              '| Cell | Purpose | Original consumer | Python status |', '|---|---|---|---|',
-             '| A2 / A5 | Word template folder / filename | RunReport1 | Partial: JSON template path only |',
-             '| A8 | Output destination | RunReport1, chart/HTML temp files | Partial: CLI output path only |',
-             '| A11 | Current report ID | LoopReports, workbook formulas | Partial: CLI report ID only |',
-             '| B15 | Smart Sections On/Off | Cutsections | Not converted |',
-             '| B17 | Headers and Footers On/Off | Changeheader | Not converted |',
-             '| B19 | Auto-Import Data Files On/Off | CommonCore → CallFigures | Not converted as workbook option |',
-             '| B21 | 508 Compliant Charts On/Off | AssignAlt | Partial metadata; not full compliance or override parity |',
-             '| B23 | DOCX / DOC / PDF format | RunReport1 | DOCX only; DOC/PDF held |',
-             '| B25 | Table of Contents Update On/Off | RunReport1 → TablesOfContents(1).Update | Held H01; updateFields request is not equivalent |',
-             '| B27 | Report title/file suffix | RunReport1 | Not converted |',
-             '| B29 | Massive Table Maker On/Off | CommonCore, MassTabMake | Not converted |',
-             '| B31 | Mass table substitution identifier | CommonCore | Not converted |',
-             '| B33 | User Defined Macros On/Off | Excel.Application.Run("TRW.AddMacros") | Held H02 |',
-             '| B35 | Demo Mode On/Off (Word visibility) | Runonestate / LoopReports | No UI equivalent; not a license bypass |',
-             '| B37 | Global Replace On/Off | RunReport1 → GlobalReplace | Not converted |',
-             '| A36 / A39 | Old kernel location mode / path | ProcessReports workbook VBA | Held H04; kernel executable absent |', '',
+             '| A2 / A5 | Word template folder / filename | RunReport1 | Implemented portable workbook folder + configured filename |',
+             '| A8 | Output destination | RunReport1, chart/HTML temp files | Implemented output override; unique nonoverwriting files |',
+             '| A11 | Current report ID | LoopReports, workbook formulas | Implemented per-ID workbook recalculation |',
+             '| B15 | Smart Sections On/Off | Cutsections | Implemented; cross-table marker limit remains |',
+             '| B17 | Headers and Footers On/Off | Changeheader | Implemented five section texts/alignments; variants partial |',
+             '| B19 | Auto-Import Data Files On/Off | CommonCore → CallFigures | Implemented CSV/XLSX imports with fresh formulas |',
+             '| B21 | 508 Compliant Charts On/Off | AssignAlt | Override/default formatted alt text implemented; no full 508 certification |',
+             '| B23 | DOCX / DOC / PDF format | RunReport1 | DOCX/PDF/legacy DOC implemented; LibreOffice needed for DOC/PDF |',
+             '| B25 | Table of Contents Update On/Off | RunReport1 → TablesOfContents(1).Update | Automatic heading TOC/PAGEREF cache from rendered pages; custom TOCs/other fields partial |',
+             '| B27 | Report title/file suffix | RunReport1 | Implemented |',
+             '| B29 | Massive Table Maker On/Off | CommonCore, MassTabMake | Implemented modes 1/2/3 |',
+             '| B31 | Mass table substitution identifier | CommonCore | Implemented report-ID filename substitution |',
+             '| B33 | User Defined Macros On/Off | Excel.Application.Run("TRW.AddMacros") | Deferred by user; On flag warns |',
+             '| B35 | Demo Mode On/Off (Word visibility) | Runonestate / LoopReports | Progress events; On flag warns that no live Word window is displayed |',
+             '| B37 | Global Replace On/Off | RunReport1 → GlobalReplace | Implemented contiguous literal pairs |',
+             '| A36 / A39 | Old kernel location mode / path | ProcessReports workbook VBA | Old handoff protocol pending; direct CLI/GUI available |', '',
              'Report names are derived from template filename before `_Template`, report ID,',
              'suffix, and selected extension. The PDF branch also uses document title metadata',
-             'in an intermediate filename. Prototype output_pattern is only a partial replacement.', '',
+             'in an intermediate filename. Workbook naming is implemented; PDFs use the same configured output name, avoiding a shared title-named temporary file.', '',
              '## FigureDataImport and Report Numbers schemas', '',
              '| Sheet / columns | Original contract |', '|---|---|',
              '| FigureDataImport A2 | Base input folder |',
@@ -121,16 +125,16 @@ def main():
              '  They are separate from the VSTO ribbon handlers; neither route is assumed unused.',
              '- Demo Project 1 contains TRW.test, TRW.AddMacros, and TRW.chartidx.',
              '  AddMacros is empty apart from a commented test call; preserving the extension',
-             '  contract is still required. chartidx is a workbook diagnostic in addition to',
+             '  execution is explicitly deferred by the user. chartidx is a workbook diagnostic in addition to',
              '  the VSTO Chart ID button.',
              '- The simple workbooks do not contain a TRW.AddMacros procedure. Their B33',
-             '  option is Off; the advanced demo has it On. Enabling it in a workbook without',
-             '  that macro is a configuration condition to detect, not silently bypass.',
+             '  option is Off; the advanced demo has it On. VBA is bypassed with a warning. Enabling it in a workbook without',
+             '  that macro does not invoke Excel; no boutique query result is claimed.',
              '- Old Changeheader2 references a `Header` sheet, absent from all supplied',
              '  workbooks. `x-Header` exists but is a different name. Keep the old function',
              '  flagged for compatibility review rather than pretending those names match.',
              '- QueryTables uses CSVIMPORTS / CSVImports (Excel names are case-insensitive).',
-             '  A future Python adapter must normalize matching consistently.', '',
+             '  The Python adapter normalizes sheet matching consistently.', '',
              '## Word templates and fields', '',
              '| Document in supplied package | Tags | Field instruction fragments | External relationships | Embedded media |',
              '|---|---:|---:|---:|---:|']
@@ -144,7 +148,7 @@ def main():
              'no external resources were fetched or field targets executed.', '',
              'Word field-instruction fragments and template tag lists are preserved in',
              'legacy-inventory.json. Layout lives in the templates, but replacement content',
-             'can alter pagination. Actual field calculation remains H01.', '']
+             'can alter pagination. Heading TOCs are now rebuilt automatically with LibreOffice layout; custom fields remain limited.', '']
     (DOCS / 'WORKBOOK_TABS.md').write_text('\n'.join(text))
     print('Documented', len(actual), 'unique tab roles and', sum(len(w['tabs']) for w in data['workbooks']), 'tab occurrences')
 

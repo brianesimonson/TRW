@@ -1,91 +1,116 @@
-# Report Writer Python engine — first implementation
+# Report Writer — Python engine 0.2
 
-For the complete original-source audit, start with
-[conversion scope and current status](docs/CONVERSION_AUDIT.md), then the
-[function-by-function ledger](docs/FUNCTION_LEDGER.md) and
-[workbook tab catalog](docs/WORKBOOK_TABS.md). No original routine is currently
-certified fully converted; the runnable engine below is a partial prototype.
+Report Writer now reads the original Excel configuration workbook and fills the
+existing Word template without launching Excel or Word. The template still
+controls sections, page breaks, styles and layout. The reporting engine is Python;
+there is no C++ layer.
 
-Generates editable Word documents from an existing Word template, without
-launching Word or Excel. The original VSTO application and uploaded archives have
-not been modified. This is a working first engine, not a complete replacement
-for every feature of the VB.NET application.
+This version implements the main reporting paths, with explicit compatibility
+limits. Start with the [conversion audit](docs/CONVERSION_AUDIT.md),
+[function ledger](docs/FUNCTION_LEDGER.md), [workbook tabs](docs/WORKBOOK_TABS.md),
+and [validation results](docs/VALIDATION.md). The original VSTO application remains
+available while the replacement is being accepted.
 
-## Run
+## Try it on Windows
 
-Python 3.11 or newer:
+1. Download the **python-engine-prototype** branch using GitHub **Code → Local →
+   Download ZIP**, then extract it. Open the folder containing `pyproject.toml`
+   and `RunReportWriter.cmd`.
+2. Double-click **RunReportWriter.cmd**. It uses your installed `python` command,
+   creates the environment and installs dependencies, then opens a small desktop
+   interface. Python 3.11+ is required. The launcher/UI still needs Windows testing.
+3. Browse to `examples\legacy\advanced-corrected\Demo Project 1.xlsm` and choose
+   an output folder. Leave the report ID blank to generate A and B.
+4. Click **Generate reports**, then **Open output folder**. Every run gets a fresh
+   folder. Open the generated Word files or choose PDF output.
+
+Install [LibreOffice](https://www.libreoffice.org/download/download-libreoffice/)
+for automatic table-of-contents/page-number calculation, PDF output or legacy
+DOC output. It runs headlessly during export. DOCX assembly alone needs only
+Python. **Draft only** skips a requested contents refresh and reports that page
+numbers are unfinished; it does not make a final report.
+
+If you prefer the PowerShell path, run these commands from the extracted folder
+that contains `pyproject.toml`:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -e .
+.\.venv\Scripts\python.exe -m trw.cli "examples\legacy\advanced-corrected\Demo Project 1.xlsm" --output "output\my-test"
+explorer .\output\my-test
+```
+
+Use a new output folder for a repeat run; existing files are protected. A failed
+batch can leave earlier completed reports. The advanced workbook's VBA flag is
+On: the results explicitly warn that boutique queries were bypassed, as requested.
+
+## What is implemented
+
+- Original workbook mappings/options, batch IDs, CSV/XLSX offsets and clearing,
+  index substitution, fresh formulas and formatted values.
+- SmartSections deletion/reasons, text, bar charts, fixed/variable table shells,
+  native merged tables and mass-table modes 1/2/3/scalars.
+- Additional DOCX insertion, caption numbering, five section headers/footers,
+  missing-value and global replacements, chart/table accessibility metadata.
+- DOCX, PDF and legacy DOC export. Heading-based contents tables are rebuilt from
+  actual rendered headings and page labels until pagination stabilizes. Generated
+  files do not request a manual field refresh on opening.
+- Single/batch/import-only CLI, chart-name listing, progress events and a basic Tk
+  desktop front end. Import-only saves a separate prepared workbook with caches.
+
+All 641 formula cells in the original three workbooks evaluate without cached
+Excel values. This is a defined formula interpreter, not all of Excel: unknown
+functions, unsupported chart types/TOC switches and malformed mappings fail.
+Charts use Matplotlib PNGs and are not pixel-identical Excel exports. Native DOCX
+tables replace the old Excel HTML/clipboard branch; conditional formatting and
+complex Excel HTML presentation remain gaps.
+
+LibreOffice determines final pagination. Microsoft Word can paginate differently,
+particularly with different fonts. Custom TOCs, arbitrary Word fields, complex
+SmartSections spanning table cells, distinct inserted-document headers/footers,
+and a retained Excel ribbon bridge remain partial. The Windows UI/launcher has
+not been exercised here. See the ledger rather than treating a demo pass as full
+application parity. Metadata is not a certification of Section 508 compliance.
+
+Access identity/license/logging and associated encryption, killing stray Word
+processes, and user VBA execution are excluded or deferred by user direction.
+Future authentication is separate work. No Access databases, signing keys,
+compiled add-in binaries or obfuscation maps are included in these examples.
+
+## Examples
+
+`examples/legacy/advanced` and `finished` contain unchanged reporting inputs from
+the supplied package. `blank` contains its original workbook for formula audit.
+
+The **advanced-corrected** copy changes the female narrative from “males” to
+“females,” points Table03 at the merged Table3 data, and supplies a matching native
+Word table placeholder. Its gender values link to the imported Figure2 values so
+A/B reports stay current. TOC refresh is On in this copy to demonstrate automatic
+finalization. Original files remain unchanged. See [example details](examples/legacy/README.md).
+
+The older JSON/CSV example remains available at `examples/hello_world/report.json`.
+It is draft assembly with explicit mappings, not the workbook adapter. New
+validated sample reports are in [sample-output/v0.2](sample-output/v0.2).
+
+## Development and CLI
 
 ```sh
 cd /workspace/TRW
-python -m venv .venv
+python3 -m venv .venv
 .venv/bin/python -m pip install -e .
-.venv/bin/python -m trw.cli examples/hello_world/report.json --output output/reports
+.venv/bin/python -m pip check
 .venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python -m trw.cli 'examples/legacy/advanced-corrected/Demo Project 1.xlsm' --output output/new-run
 ```
 
-On Windows, use `.venv\Scripts\python.exe` in place of `.venv/bin/python`.
-After installation, the equivalent CLI is `trw report.json --output reports`.
-Use `--report A` for one report, or repeat `--report` for selected reports.
-Existing output files are protected from overwriting; choose a new output folder
-for another run. A batch can leave earlier completed reports if a later one fails.
+Add `--report A` for one report (repeat for selected IDs), `--format pdf` or `doc`,
+`--as-of 2026-10-13` for deterministic dates, `--project-dir PATH` to relocate a
+project, or `--soffice PATH` for a nonstandard LibreOffice installation.
+`--update-toc`/`--no-update-toc` override B25. `--import-only` writes prepared
+workbooks; `--list-charts` lists actual Excel drawing names.
 
-## Existing template, new engine
-
-The example contains the original supplied `Example Project_Template.docx` and
-six CSV inputs. `report.json` explicitly expresses the example's mappings and
-calculations; it is not an automatic conversion of the `.xlsm` workbook.
-
-The Word document remains the layout authority. Existing sections, margins,
-page breaks, styles, headers, footers, and unrelated content are retained.
-Text tags can span formatting runs and occur in tables, headers, or footers.
-Text replacements retain surrounding run formatting and use the tag's first
-run formatting for the replacement. Table, bullet, and chart tags must occupy
-their own paragraph. Inserted tables use explicit column widths and repeating
-header rows. Charts are PNG images with data-derived alternative text.
-Bullets use actual Word numbering rather than font-specific bullet characters.
-
-The reusable engine is `trw.engine.render(template, destination, elements)`.
-The manifest/CSV adapter is separate. Another adapter can accept resolved data
-and formatting from an Excel ribbon without changing the document engine.
-Manifests can also omit `sources` and supply resolved `value`, `rows`,
-`labels`/`values`, and `items` directly for text, table, chart, and bullet elements.
-
-The Company B example intentionally selects its own CSV inputs (3 employees).
-The uploaded simple example's fixed Company A filenames produced 30 employees
-even in its B report. The advanced uploaded workbook already selects inputs
-by report ID. This behavior is explicit in the new manifest, not a change to
-the uploaded workbook.
-
-## Implemented and checked
-
-- Existing `@#$_...` tags; repeated tags and tags split across runs.
-- CSV input selection per report, numeric totals, text, tables, charts, bullets.
-- Individual and batch DOCX generation; chart and table accessibility metadata.
-- Failure on unknown/unresolved tags, malformed table rows, or output collisions.
-- Automated checks of both supplied example datasets, document sections/page
-  breaks, header replacements, run formatting, chart count/alt text, and ZIP integrity.
-
-## Remaining work
-
-This engine does **not** calculate Excel formulas, execute workbook VBA, import
-workbook mappings automatically, reproduce Excel charts exactly, or implement
-SmartSections, document merging, mass-table rules, caption renumbering, licensing,
-or the ribbon integration. The example calculations were expressed directly in
-the manifest adapter. Inserted tables/charts have new explicit styling; their
-appearance has not been proven identical to the Interop output.
-
-No PDF renderer or Word pagination engine is included. The template's TOC fields
-are preserved and marked for refresh on opening in Word; their cached page
-numbers remain uncalculated here. Growing content may change final pagination.
-Accessibility metadata alone is not a claim of Section 508 compliance.
-
-Both example DOCX files were also successfully opened and exported by headless
-LibreOffice as a compatibility check. The four-page Company A output was visually
-inspected. This is not validation against Microsoft Word's exact rendering; the
-existing table-of-contents page cache still needs refresh. LibreOffice is not a
-runtime dependency of the report engine.
-
-Next: connect the Excel ribbon to resolved report data, or implement a workbook
-adapter with a deliberate strategy for formulas and chart styling; then port
-the remaining VB.NET feature branches and validate against the advanced demo.
-Keep the existing VSTO application available until these are verified.
+Tests requiring LibreOffice are reported as skipped when it is absent. No
+persistent server is required. Regenerate documentation with
+`python tools/write_conversion_docs.py` and `python tools/write_workbook_docs.py`;
+reviewed coverage lives in `docs/conversion-updates.json` and
+`docs/workbook-coverage.json`. The raw legacy inventory remains source provenance.

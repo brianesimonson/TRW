@@ -9,7 +9,109 @@
     "file": "trw/cli.py",
     "name": "main",
     "start_line": 45,
-    "end_line": 71
+    "end_line": 101
+  },
+  {
+    "file": "trw/document.py",
+    "name": "text_nodes",
+    "start_line": 24,
+    "end_line": 26
+  },
+  {
+    "file": "trw/document.py",
+    "name": "text_of",
+    "start_line": 29,
+    "end_line": 30
+  },
+  {
+    "file": "trw/document.py",
+    "name": "replace_literal",
+    "start_line": 33,
+    "end_line": 51
+  },
+  {
+    "file": "trw/document.py",
+    "name": "set_property",
+    "start_line": 54,
+    "end_line": 61
+  },
+  {
+    "file": "trw/document.py",
+    "name": "apply_cell_style",
+    "start_line": 64,
+    "end_line": 98
+  },
+  {
+    "file": "trw/document.py",
+    "name": "table_properties",
+    "start_line": 101,
+    "end_line": 128
+  },
+  {
+    "file": "trw/document.py",
+    "name": "containing_table",
+    "start_line": 131,
+    "end_line": 137
+  },
+  {
+    "file": "trw/document.py",
+    "name": "available_width",
+    "start_line": 140,
+    "end_line": 163
+  },
+  {
+    "file": "trw/document.py",
+    "name": "fill_shell",
+    "start_line": 166,
+    "end_line": 207
+  },
+  {
+    "file": "trw/document.py",
+    "name": "insert_legacy_table",
+    "start_line": 210,
+    "end_line": 235
+  },
+  {
+    "file": "trw/document.py",
+    "name": "split_anchor",
+    "start_line": 238,
+    "end_line": 250
+  },
+  {
+    "file": "trw/document.py",
+    "name": "trim_interval",
+    "start_line": 253,
+    "end_line": 259
+  },
+  {
+    "file": "trw/document.py",
+    "name": "cut_sections",
+    "start_line": 262,
+    "end_line": 305
+  },
+  {
+    "file": "trw/document.py",
+    "name": "insert_documents",
+    "start_line": 308,
+    "end_line": 328
+  },
+  {
+    "file": "trw/document.py",
+    "name": "change_headers",
+    "start_line": 331,
+    "end_line": 347
+  },
+  {
+    "file": "trw/document.py",
+    "name": "populate",
+    "start_line": 350,
+    "end_line": 380
+  },
+  {
+    "file": "trw/document.py",
+    "name": "generate",
+    "start_line": 383,
+    "end_line": 400
   },
   {
     "file": "trw/engine.py",
@@ -27,24 +129,474 @@
     "file": "trw/engine.py",
     "name": "chart_image",
     "start_line": 53,
-    "end_line": 75
+    "end_line": 92
   },
   {
     "file": "trw/engine.py",
     "name": "insert_table",
-    "start_line": 78,
-    "end_line": 113
+    "start_line": 95,
+    "end_line": 130
   },
   {
     "file": "trw/engine.py",
     "name": "bullet_numbering",
-    "start_line": 116,
-    "end_line": 131
+    "start_line": 133,
+    "end_line": 148
   },
   {
     "file": "trw/engine.py",
     "name": "render",
-    "start_line": 134,
-    "end_line": 206
+    "start_line": 151,
+    "end_line": 223
+  },
+  {
+    "file": "trw/files.py",
+    "name": "wait_for_file",
+    "start_line": 8,
+    "end_line": 14
+  },
+  {
+    "file": "trw/files.py",
+    "name": "save_document",
+    "start_line": 17,
+    "end_line": 29
+  },
+  {
+    "file": "trw/files.py",
+    "name": "save_bytes",
+    "start_line": 32,
+    "end_line": 43
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "excel_text",
+    "start_line": 20,
+    "end_line": 27
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "number",
+    "start_line": 30,
+    "end_line": 38
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "format_value",
+    "start_line": 41,
+    "end_line": 88
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "flatten",
+    "start_line": 190,
+    "end_line": 195
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "compare",
+    "start_line": 198,
+    "end_line": 214
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "__init__",
+    "start_line": 100,
+    "end_line": 114
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "peek",
+    "start_line": 116,
+    "end_line": 117
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "take",
+    "start_line": 119,
+    "end_line": 124
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "parse",
+    "start_line": 126,
+    "end_line": 129
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "expression",
+    "start_line": 131,
+    "end_line": 187
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "__init__",
+    "start_line": 218,
+    "end_line": 223
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "sheet",
+    "start_line": 225,
+    "end_line": 229
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "invalidate",
+    "start_line": 231,
+    "end_line": 232
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "cell",
+    "start_line": 234,
+    "end_line": 258
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "rectangle",
+    "start_line": 260,
+    "end_line": 268
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "evaluate",
+    "start_line": 270,
+    "end_line": 365
+  },
+  {
+    "file": "trw/formulas.py",
+    "name": "matches",
+    "start_line": 316,
+    "end_line": 327
+  },
+  {
+    "file": "trw/gui.py",
+    "name": "main",
+    "start_line": 99,
+    "end_line": 100
+  },
+  {
+    "file": "trw/gui.py",
+    "name": "__init__",
+    "start_line": 12,
+    "end_line": 36
+  },
+  {
+    "file": "trw/gui.py",
+    "name": "select_workbook",
+    "start_line": 38,
+    "end_line": 42
+  },
+  {
+    "file": "trw/gui.py",
+    "name": "select_output",
+    "start_line": 44,
+    "end_line": 46
+  },
+  {
+    "file": "trw/gui.py",
+    "name": "write",
+    "start_line": 48,
+    "end_line": 49
+  },
+  {
+    "file": "trw/gui.py",
+    "name": "run",
+    "start_line": 51,
+    "end_line": 71
+  },
+  {
+    "file": "trw/gui.py",
+    "name": "poll",
+    "start_line": 73,
+    "end_line": 88
+  },
+  {
+    "file": "trw/gui.py",
+    "name": "open_output",
+    "start_line": 90,
+    "end_line": 96
+  },
+  {
+    "file": "trw/gui.py",
+    "name": "worker",
+    "start_line": 63,
+    "end_line": 70
+  },
+  {
+    "file": "trw/legacy.py",
+    "name": "vb_code_only",
+    "start_line": 6,
+    "end_line": 23
+  },
+  {
+    "file": "trw/legacy.py",
+    "name": "column_number",
+    "start_line": 26,
+    "end_line": 27
+  },
+  {
+    "file": "trw/legacy.py",
+    "name": "column_label",
+    "start_line": 30,
+    "end_line": 31
+  },
+  {
+    "file": "trw/legacy.py",
+    "name": "range_coordinates",
+    "start_line": 34,
+    "end_line": 35
+  },
+  {
+    "file": "trw/legacy.py",
+    "name": "range_moves",
+    "start_line": 38,
+    "end_line": 40
+  },
+  {
+    "file": "trw/pipeline.py",
+    "name": "run_workbook",
+    "start_line": 10,
+    "end_line": 69
+  },
+  {
+    "file": "trw/renderer.py",
+    "name": "__init__",
+    "start_line": 20,
+    "end_line": 28
+  },
+  {
+    "file": "trw/renderer.py",
+    "name": "export",
+    "start_line": 30,
+    "end_line": 47
+  },
+  {
+    "file": "trw/renderer.py",
+    "name": "finalize",
+    "start_line": 49,
+    "end_line": 93
+  },
+  {
+    "file": "trw/toc.py",
+    "name": "pdf_outline",
+    "start_line": 21,
+    "end_line": 33
+  },
+  {
+    "file": "trw/toc.py",
+    "name": "heading_level",
+    "start_line": 36,
+    "end_line": 53
+  },
+  {
+    "file": "trw/toc.py",
+    "name": "toc_field",
+    "start_line": 56,
+    "end_line": 87
+  },
+  {
+    "file": "trw/toc.py",
+    "name": "run_node",
+    "start_line": 90,
+    "end_line": 100
+  },
+  {
+    "file": "trw/toc.py",
+    "name": "rebuild_toc",
+    "start_line": 103,
+    "end_line": 172
+  },
+  {
+    "file": "trw/toc.py",
+    "name": "visit",
+    "start_line": 24,
+    "end_line": 31
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "read_source",
+    "start_line": 25,
+    "end_line": 54
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "parse_formats",
+    "start_line": 57,
+    "end_line": 67
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "typed",
+    "start_line": 44,
+    "end_line": 53
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "__init__",
+    "start_line": 71,
+    "end_line": 85
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "close",
+    "start_line": 87,
+    "end_line": 88
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "_chart_names",
+    "start_line": 90,
+    "end_line": 112
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "color",
+    "start_line": 114,
+    "end_line": 133
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "sheet",
+    "start_line": 135,
+    "end_line": 136
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "value",
+    "start_line": 138,
+    "end_line": 139
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "option",
+    "start_line": 141,
+    "end_line": 142
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "report_ids",
+    "start_line": 144,
+    "end_line": 152
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "resolve_path",
+    "start_line": 154,
+    "end_line": 172
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "import_data",
+    "start_line": 174,
+    "end_line": 201
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "substitute_index",
+    "start_line": 203,
+    "end_line": 221
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "run_macro_hook",
+    "start_line": 223,
+    "end_line": 231
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "prepare",
+    "start_line": 233,
+    "end_line": 246
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "formatted",
+    "start_line": 248,
+    "end_line": 250
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "range_data",
+    "start_line": 252,
+    "end_line": 253
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "cell_style",
+    "start_line": 255,
+    "end_line": 264
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "table_element",
+    "start_line": 266,
+    "end_line": 293
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "chart_element",
+    "start_line": 295,
+    "end_line": 340
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "transform_bullets",
+    "start_line": 342,
+    "end_line": 367
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "make_bullets",
+    "start_line": 369,
+    "end_line": 372
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "elements",
+    "start_line": 375,
+    "end_line": 388
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "mass_elements",
+    "start_line": 390,
+    "end_line": 414
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "sections",
+    "start_line": 416,
+    "end_line": 428
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "postprocess",
+    "start_line": 430,
+    "end_line": 467
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "output_name",
+    "start_line": 469,
+    "end_line": 476
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "save_prepared",
+    "start_line": 478,
+    "end_line": 508
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "target",
+    "start_line": 96,
+    "end_line": 97
+  },
+  {
+    "file": "trw/workbook.py",
+    "name": "relationships",
+    "start_line": 98,
+    "end_line": 100
   }
 ]

@@ -6,11 +6,11 @@ every original routine, workbook tab/formula contract, and used feature.
 
 Read `docs/CONVERSION_AUDIT.md`, `docs/FUNCTION_LEDGER.md`, and
 `docs/WORKBOOK_TABS.md` before implementation. The current Python engine is a
-partial prototype. There is no C++ component. Keep source and binary provenance
+workbook-driven replacement with explicit parity gaps. There is no C++ component. Keep source and binary provenance
 separate; uploaded archives are preserved outside the Git checkout.
 
 - Update the conversion ledger in the same change as feature work. Maintain
-  reviewed descriptions/statuses in `tools/write_conversion_docs.py`, regenerate
+  reviewed descriptions/statuses in `docs/conversion-updates.json` and the generator, regenerate
   the Markdown/CSV/JSON, and update the scope summary and acceptance evidence.
 - Do not label a routine Complete because the demo passes. Verify its original
   behavior contract and all relevant branches; record deliberate differences.
@@ -32,5 +32,9 @@ separate; uploaded archives are preserved outside the Git checkout.
   worktrees unless the user explicitly requests one.
 
 Use the `.venv` interpreter for runtime commands. No persistent service is needed
-for the current CLI. `python -m unittest discover -s tests -v` runs the existing
-prototype checks; those four checks do not establish complete legacy parity.
+for the CLI. `python -m unittest discover -s tests -v` runs unit and renderer integration checks. LibreOffice is required for TOC/PDF/DOC validation; skipped renderer tests must not be reported as passing. The Tk UI/Windows launcher still needs platform validation.
+
+User-approved exclusions: Access identity/license/logging/EncryptX and KillWord.
+User VBA boutique queries (AddMacros) are deferred; emit a warning when requested.
+Do not reintroduce them as conversion prerequisites. Originals remain unchanged;
+only the separate advanced-corrected fixture contains agreed demo corrections.

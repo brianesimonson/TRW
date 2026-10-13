@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
+UPDATES = json.loads((DOCS / 'conversion-updates.json').read_text())
 
 DESCRIPTIONS = {
     'AccessX.vb': {
@@ -217,6 +218,9 @@ def classify(row, generated):
         description = HELPERS.get(name)
     if description is None:
         raise ValueError(f'Undocumented routine: {file}:{name}')
+    update = UPDATES.get(file + ':' + name)
+    if update:
+        return description, update['status'], update['python_replacement'], update['gap']
     if (file, name) in PARTIAL:
         replacement, gap = PARTIAL[(file, name)]
         return description, 'Partial', replacement, gap
@@ -239,8 +243,8 @@ def main():
         description, status, replacement, gap = classify(row, generated[row['file']])
         ledger.append(dict(row, language='VB.NET', purpose=description, status=status,
                            python_replacement=replacement, gap=gap,
-                           verification=('Related Python unit/example checks only; no complete legacy parity test.'
-                                         if status == 'Partial' else 'Source inspection only; not converted or parity-verified.')))
+                           verification=UPDATES.get(row['file'] + ':' + row['name'], {}).get('verification', ('Related Python unit/example checks only; no complete legacy parity test.'
+                                         if status == 'Partial' else 'Source inspection only; not converted or parity-verified.'))))
     vba_desc = {
         'ProcessJobOne': 'Save workbook; create TRWHubToKernel.xlsx with hub path/name and RunOne; launch external kernel.',
         'ProcessJobMany': 'Save workbook; create TRWHubToKernel.xlsx with RunMany; launch external kernel.',
@@ -255,10 +259,13 @@ def main():
                 raise ValueError('Undocumented VBA routine: ' + row['id'])
             ledger.append(dict(row, file=workbook['name'] + '/' + row['file'], language='VBA',
                                scope=Path(row['file']).stem,
-                               purpose=vba_desc[row['name']], status='Held', python_replacement='',
-                               gap=('H02: runtime VBA extension contract unimplemented.' if row['name'] == 'AddMacros'
-                                    else 'H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package.'),
-                               verification='Extracted VBA source only; no macro execution or parity test.'))
+                               purpose=vba_desc[row['name']],
+                               status='Deferred by user' if row['name'] == 'AddMacros' else 'Review candidate' if row['name'] == 'test' else 'Partial',
+                               python_replacement='' if row['name'] in ('AddMacros','test') else 'cli.main / pipeline.run_workbook / --list-charts',
+                               gap=('User boutique VBA queries explicitly bypassed for now; On flag emits a warning.' if row['name'] == 'AddMacros'
+                                    else 'Diagnostic retained; VBA execution deferred.' if row['name'] == 'test'
+                                    else 'Single/batch and chart listing are available directly in Python. Original workbook-to-kernel handoff/selected-chart UI not ported; kernel executable is absent.'),
+                               verification='VBA not executed. Equivalent CLI/report outcomes tested; old handoff protocol remains unverified.'))
     (DOCS / 'conversion-ledger.json').write_text(json.dumps(ledger, indent=2) + '\n')
     columns = ['id', 'language', 'file', 'scope', 'name', 'kind', 'start_line', 'end_line',
                'signature', 'purpose', 'status', 'python_replacement', 'gap', 'verification']
@@ -267,11 +274,12 @@ def main():
         writer.writeheader()
         writer.writerows(ledger)
     lines = ['# Function-by-function conversion ledger', '',
-             'Baseline: original uploaded archives and Python prototype commit `26ab3a4`.', '',
+             'Source baseline: original uploaded archives. Implementation review: Python engine 0.2.0.', '',
              'Every compiled VB.NET declaration is listed, including constructors, properties,',
              'Win32 declarations, empty events, and generated designer support. VBA declarations',
              'are listed per workbook occurrence. Line numbers refer to the original archive,',
-             'not to decompiled DLLs. No original routine is marked **Complete**.', '',
+             'not to decompiled DLLs. **Complete** applies only to the specific verified routine contract,',
+             'not to the whole application. Evidence is recorded per row in the JSON/CSV.', '',
              'See [scope, status definitions, and holds](CONVERSION_AUDIT.md),',
              '[workbook tabs](WORKBOOK_TABS.md), and the sortable [CSV ledger](conversion-ledger.csv).', '',
              'Descriptions are reviewed source interpretations. Reference candidates in the JSON',

@@ -62,12 +62,29 @@ def chart_image(element):
     fig = Figure(figsize=(width, height), layout='constrained')
     FigureCanvasAgg(fig)
     ax = fig.subplots()
-    ax.bar(labels, values, color=element.get('color', '#4472C4'))
+    series = element.get('series', [values])
+    names = element.get('series_names', [''] * len(series))
+    import numpy as np
+    positions = np.arange(len(labels))
+    span = 0.8 / len(series)
+    for i, data in enumerate(series):
+        offset = positions - 0.4 + span / 2 + i * span
+        if element.get('direction') == 'bar':
+            ax.barh(offset, data, height=span, label=names[i], color=element.get('colors', [element.get('color', '#4472C4')]*len(series))[i])
+        else:
+            ax.bar(offset, data, width=span, label=names[i], color=element.get('colors', [element.get('color', '#4472C4')]*len(series))[i])
+    if element.get('direction') == 'bar':
+        ax.set_yticks(positions, labels)
+        ax.invert_yaxis()
+    else:
+        ax.set_xticks(positions, labels)
+    if len(series) > 1:
+        ax.legend()
     ax.set_title(element.get('title', ''))
     ax.set_ylabel(element.get('ylabel', ''))
     if element.get('percent'):
         from matplotlib.ticker import PercentFormatter
-        ax.yaxis.set_major_formatter(PercentFormatter(1))
+        (ax.xaxis if element.get('direction') == 'bar' else ax.yaxis).set_major_formatter(PercentFormatter(1))
     ax.spines[['top', 'right']].set_visible(False)
     buf = BytesIO()
     fig.savefig(buf, format='png', dpi=180)
@@ -182,12 +199,12 @@ def render(template, destination, elements):
     remaining = {tag for p in paragraphs(document) for tag in TAG.findall(p.text)}
     if remaining:
         raise ValueError('Unresolved tags: ' + ', '.join(sorted(remaining)))
-    # Word may refresh fields on opening; this does not calculate TOC page numbers.
+    # Manifest mode is a draft: do not request a manual field update on opening.
     update = document.settings.element.find(qn('w:updateFields'))
     if update is None:
         update = OxmlElement('w:updateFields')
         document.settings.element.append(update)
-    update.set(qn('w:val'), 'true')
+    update.set(qn('w:val'), 'false')
     destination = Path(destination)
     destination.parent.mkdir(parents=True, exist_ok=True)
     import tempfile

@@ -15,10 +15,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Empty commented-out identity test stub.",
-    "status": "Review candidate",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "Retained in inventory/scope. Static reference evidence and workbook hooks need review before any retirement; not declared unused.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:AccessX.vb:13",
@@ -38,10 +38,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Read UserAccess in Access; distinguish permitted, denied, and unknown Windows users.",
-    "status": "Held",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "H03: legacy Access/license compatibility needs fixtures and policy decisions; original production gating is not present in Python.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:AccessX.vb:54",
@@ -61,10 +61,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Check UserAccess; automatically add and permit unknown users in non-strict mode.",
-    "status": "Held",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "H03: legacy Access/license compatibility needs fixtures and policy decisions; original production gating is not present in Python.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:AccessX.vb:115",
@@ -84,10 +84,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Read StrictAccess policy from the Access database.",
-    "status": "Held",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "H03: legacy Access/license compatibility needs fixtures and policy decisions; original production gating is not present in Python.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:AccessX.vb:139",
@@ -107,10 +107,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Write user, workbook path, timestamp, and single/batch report count to UserLogs.",
-    "status": "Held",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "H03: legacy Access/license compatibility needs fixtures and policy decisions; original production gating is not present in Python.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:AccessX.vb:185",
@@ -132,10 +132,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Gate report execution on license and identity, then log the request; return status 1\u20134.",
-    "status": "Held",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "H03: legacy Access/license compatibility needs fixtures and policy decisions; original production gating is not present in Python.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:AccessX.vb:215",
@@ -155,10 +155,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Read encrypted license records from IHTNGU, decrypt using current month/year, and validate marker.",
-    "status": "Held",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "H03: legacy Access/license compatibility needs fixtures and policy decisions; original production gating is not present in Python.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:AccessX.vb:247",
@@ -176,10 +176,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Manual test entry to request one licensed report.",
-    "status": "Review candidate",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "Retained in inventory/scope. Static reference evidence and workbook hooks need review before any retirement; not declared unused.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:AccessX.vb:252",
@@ -205,10 +205,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Resolve TRWlogs.accdb beside the active workbook and return ACE connection string; both active candidate paths are identical, older alternate path is commented.",
-    "status": "Held",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "H03: legacy Access/license compatibility needs fixtures and policy decisions; original production gating is not present in Python.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:ChangeChart.vb:6",
@@ -230,10 +230,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Read Report Numbers chart rows and reset named Excel chart source ranges; suppress individual errors.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook._chart_names/chart_element",
+    "gap": "Named chart source ranges read freshly per report; supports clustered/standard bar charts with multiple series and dimensions. Excel appearance/other chart types are unresolved; unsupported types fail.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:EncryptX.vb:11",
@@ -251,10 +251,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Encrypt Unicode text with AES, derived key/IV, and Base64 output.",
-    "status": "Review candidate",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "Retained in inventory/scope. Static reference evidence and workbook hooks need review before any retirement; not declared unused.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:EncryptX.vb:36",
@@ -274,10 +274,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Decrypt Base64 license text using date-dependent key material; decode Unicode text.",
-    "status": "Held",
+    "status": "Excluded by user",
     "python_replacement": "",
-    "gap": "H03: legacy Access/license compatibility needs fixtures and policy decisions; original production gating is not present in Python.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
   },
   {
     "id": "vbnet:GrabFigureData.vb:23",
@@ -374,10 +374,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Current importer: resolve filename, query into CSVIMPORTS, clear destination rectangle, copy offset rows/columns, clean staging.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.import_data/read_source; workbook.chart_element",
+    "gap": "CSV/XLSX inputs, typed data, staging-free offsets and blank clearing implemented. Excel QueryTables locale/type inference and legacy .xls inputs are not reproduced; unsupported input types fail.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:GrabFigureData.vb:536",
@@ -397,10 +397,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Select one of three domain-specific bullet transformations from FigureDataImport column L.",
-    "status": "Review candidate",
-    "python_replacement": "",
-    "gap": "Retained in inventory/scope. Static reference evidence and workbook hooks need review before any retirement; not declared unused.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.make_bullets / transform_bullets",
+    "gap": "All three modes exposed and tested as opt-in transformations; legacy CallFigures commented out this call, so automatic imports do not enable it.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:GrabFigureData.vb:568",
@@ -422,10 +422,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Import configured rows 4\u2013100, run COM cleanup, and refresh chart ranges via ChangeChart.CHrt.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.import_data/read_source; workbook.chart_element",
+    "gap": "CSV/XLSX inputs, typed data, staging-free offsets and blank clearing implemented. Excel QueryTables locale/type inference and legacy .xls inputs are not reproduced; unsupported input types fail.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:GrabFigureData.vb:608",
@@ -448,10 +448,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map A\u2013Z to 1\u201326; return legacy sentinel 1000 for other inputs.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label",
+    "gap": "Valid address conversion supports more columns; legacy invalid-input sentinel 1000/AA intentionally replaced by errors/valid modern columns.",
+    "verification": "tests/test_contracts.py: valid/invalid column and range cases."
   },
   {
     "id": "vbnet:GrabFigureData.vb:667",
@@ -469,10 +469,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Map 1\u201326 to A\u2013Z; return AA for other inputs.",
-    "status": "Review candidate",
-    "python_replacement": "",
-    "gap": "Retained in inventory/scope. Static reference evidence and workbook hooks need review before any retirement; not declared unused.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label",
+    "gap": "Valid address conversion supports more columns; legacy invalid-input sentinel 1000/AA intentionally replaced by errors/valid modern columns.",
+    "verification": "tests/test_contracts.py: valid/invalid column and range cases."
   },
   {
     "id": "vbnet:GrabFigureData.vb:729",
@@ -538,10 +538,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Current ribbon one-time-import entry: imports configured rows using GrabdataExcel4, cleans COM, shows completion.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "pipeline.run_workbook(import_only=True); CLI --import-only; GUI Import only",
+    "gap": "Writes separate prepared workbook with formula caches and original VBA bytes. Excel extensions/drawing fidelity on roundtrip and Windows UI need validation.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:GrabFigureData.vb:803",
@@ -582,10 +582,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Repeatedly release a COM object; swallow cleanup errors.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "ReportWorkbook.close; temporary directory contexts",
+    "gap": "No COM objects in engine; close workbook files and owned temporary resources.",
+    "verification": "Workbook immutability and renderer integration tests; no Windows COM leak assertion needed."
   },
   {
     "id": "vbnet:GrabFigureData.vb:854",
@@ -608,9 +608,9 @@
     "language": "VB.NET",
     "purpose": "Import CSV using Excel QueryTables and legacy parse settings; remove connections/query tables afterward.",
     "status": "Partial",
-    "python_replacement": "cli.resolve CSV reader",
-    "gap": "Reads dictionaries only; no staging sheet, offsets, typed Excel parsing, or QueryTables settings equivalence.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "workbook.import_data/read_source; workbook.chart_element",
+    "gap": "CSV/XLSX inputs, typed data, staging-free offsets and blank clearing implemented. Excel QueryTables locale/type inference and legacy .xls inputs are not reproduced; unsupported input types fail.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:GrabFigureData.vb:904",
@@ -633,9 +633,9 @@
     "language": "VB.NET",
     "purpose": "Clear staging, derive basename from full path, query CSV into CSVIMPORTS, remove connections/query tables.",
     "status": "Partial",
-    "python_replacement": "cli.resolve CSV reader",
-    "gap": "Reads configured file only; no staging-clear/range/format workflow or mass-table integration.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "workbook.import_data/read_source; workbook.chart_element",
+    "gap": "CSV/XLSX inputs, typed data, staging-free offsets and blank clearing implemented. Excel QueryTables locale/type inference and legacy .xls inputs are not reproduced; unsupported input types fail.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:MassTabMake.vb:8",
@@ -657,10 +657,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Iterate index_temp rows until blank column-C tag; invoke SearchAndReplace for each tag.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.mass_elements; document.fill_shell",
+    "gap": "Modes 1/3 fixed shell, mode 2 variable rows until blank, scalar values and column formats implemented. Unsupported Excel formats fail; complex merged shells/Word selection parity need more cases.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:MassTabMake.vb:25",
@@ -682,10 +682,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Import indexed CSV, parse per-column formats, fill scalar/fixed table modes 1/3 or expand rows in mode 2.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.mass_elements; document.fill_shell",
+    "gap": "Modes 1/3 fixed shell, mode 2 variable rows until blank, scalar values and column formats implemented. Unsupported Excel formats fail; complex merged shells/Word selection parity need more cases.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:MassTabMake.vb:224",
@@ -705,10 +705,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Extract formatN segments from a concatenated per-column format specification.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.parse_formats",
+    "gap": "Column formatN segments parsed; malformed/out-of-order definitions fail explicitly rather than emulating VB Mid behavior.",
+    "verification": "tests/test_workbook.py: all mass modes and scalar formatting; tests/test_contracts.py: malformed formats."
   },
   {
     "id": "vbnet:MassTabMake.vb:246",
@@ -728,10 +728,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Parse the starting column from a dollar-qualified Excel address.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:MassTabMake.vb:264",
@@ -751,10 +751,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Parse starting row from an Excel range; legacy single-cell branch returns zero.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:MassTabMake.vb:281",
@@ -774,10 +774,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Return end-column minus start-column (a movement count, not inclusive width).",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:MassTabMake.vb:302",
@@ -797,10 +797,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Return end-row minus start-row (a movement count, not inclusive height).",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:MassTabMake.vb:320",
@@ -843,10 +843,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Convert one/two-letter column names using Firstchar plus Secondchar.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:MassTabMake.vb:332",
@@ -866,10 +866,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map first letter to a multiple-of-26 column offset; percent sentinel means zero.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:MassTabMake.vb:394",
@@ -889,10 +889,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map second letter to 1\u201326.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:MassTabMake.vb:455",
@@ -912,10 +912,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Convert numeric column index to a one/two-letter address through Convertme.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:MassTabMake.vb:464",
@@ -935,10 +935,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map 0\u201326 to empty/A\u2013Z; return A outside that range.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:ModuleConnection.vb:5",
@@ -1325,10 +1325,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Run All Reports button: progress UI, license gate, Word-close check, batch generation, error dialogs, cleanup.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "cli.main; gui.ReportWriterApp; pipeline.run_workbook",
+    "gap": "Single/batch/import controls implemented in CLI and Tk front end. Access/KillWord excluded; retained ribbon bridge and Windows UI/installer validation are pending.",
+    "verification": "CLI A/B examples and import-only tests pass; Tk UI/launcher not runtime-tested."
   },
   {
     "id": "vbnet:RWRibbon.vb:65",
@@ -1348,10 +1348,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Run One Report button: progress UI, license gate, Word-close check, single generation, error dialogs, cleanup.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "cli.main; gui.ReportWriterApp; pipeline.run_workbook",
+    "gap": "Single/batch/import controls implemented in CLI and Tk front end. Access/KillWord excluded; retained ribbon bridge and Windows UI/installer validation are pending.",
+    "verification": "CLI A/B examples and import-only tests pass; Tk UI/launcher not runtime-tested."
   },
   {
     "id": "vbnet:RWRibbon.vb:123",
@@ -1371,10 +1371,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "One Time Import button: progress UI, JustImportMe3, workbook/error handling.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "cli.main; gui.ReportWriterApp; pipeline.run_workbook",
+    "gap": "Single/batch/import controls implemented in CLI and Tk front end. Access/KillWord excluded; retained ribbon bridge and Windows UI/installer validation are pending.",
+    "verification": "CLI A/B examples and import-only tests pass; Tk UI/launcher not runtime-tested."
   },
   {
     "id": "vbnet:RWRibbon.vb:169",
@@ -1394,10 +1394,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Chart ID button: read selected chart name and strip worksheet name; show diagnostic/error message.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "CLI --list-charts / workbook._chart_names",
+    "gap": "Lists actual drawing chart names; selected-chart selection and dialog require ribbon/Excel host.",
+    "verification": "tests/test_workbook.py: named demo charts; CLI chart list exercised."
   },
   {
     "id": "vbnet:ReportCycles.vb:15",
@@ -1415,10 +1415,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Lazily construct and expose the topmost Processing progress form.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "gui.ReportWriterApp / pipeline progress callback",
+    "gap": "Desktop progress UI implemented; Windows/Tk interaction not exercised in this Linux cloud. Cancellation/installer/ribbon bridge remain pending.",
+    "verification": "CLI progress events available; GUI source inspection only."
   },
   {
     "id": "vbnet:ReportCycles.vb:26",
@@ -1436,10 +1436,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Construct FileNotExist/MyErrorMessage exceptions with message and optional inner exception.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "WorkbookError / DocumentError / RendererError / FileNotFoundError",
+    "gap": "Use explicit Python exceptions and CLI/GUI error reporting rather than custom VB exception wrappers.",
+    "verification": "Failure cases in workbook/document/renderer tests; Windows dialogs untested."
   },
   {
     "id": "vbnet:ReportCycles.vb:30",
@@ -1457,10 +1457,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Construct FileNotExist/MyErrorMessage exceptions with message and optional inner exception.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "WorkbookError / DocumentError / RendererError / FileNotFoundError",
+    "gap": "Use explicit Python exceptions and CLI/GUI error reporting rather than custom VB exception wrappers.",
+    "verification": "Failure cases in workbook/document/renderer tests; Windows dialogs untested."
   },
   {
     "id": "vbnet:ReportCycles.vb:42",
@@ -1478,10 +1478,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Construct FileNotExist/MyErrorMessage exceptions with message and optional inner exception.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "WorkbookError / DocumentError / RendererError / FileNotFoundError",
+    "gap": "Use explicit Python exceptions and CLI/GUI error reporting rather than custom VB exception wrappers.",
+    "verification": "Failure cases in workbook/document/renderer tests; Windows dialogs untested."
   },
   {
     "id": "vbnet:ReportCycles.vb:46",
@@ -1499,10 +1499,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Construct FileNotExist/MyErrorMessage exceptions with message and optional inner exception.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "WorkbookError / DocumentError / RendererError / FileNotFoundError",
+    "gap": "Use explicit Python exceptions and CLI/GUI error reporting rather than custom VB exception wrappers.",
+    "verification": "Failure cases in workbook/document/renderer tests; Windows dialogs untested."
   },
   {
     "id": "vbnet:ReportCycles.vb:54",
@@ -1523,9 +1523,9 @@
     "language": "VB.NET",
     "purpose": "Run CommonCore followed by the main report generator for the current batch item.",
     "status": "Partial",
-    "python_replacement": "cli.main report loop",
-    "gap": "JSON/CSV preparation only; no CommonCore, workbook/VBA, or legacy postprocessing.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "pipeline.run_workbook; workbook.prepare; document.generate; renderer.finalize",
+    "gap": "Single/batch real-workbook pipeline implemented. Overall limits: chart fidelity, uncommon formulas/fields, Word-vs-LibreOffice pagination, desktop validation.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportCycles.vb:62",
@@ -1546,9 +1546,9 @@
     "language": "VB.NET",
     "purpose": "Capture active sheet, import/prepare workbook, launch Word, generate one report, quit Word, restore Excel UI.",
     "status": "Partial",
-    "python_replacement": "cli.main --report",
-    "gap": "Single manifest report works; active workbook, licensing, progress UI, and full pipeline absent.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "pipeline.run_workbook; workbook.prepare; document.generate; renderer.finalize",
+    "gap": "Single/batch real-workbook pipeline implemented. Overall limits: chart fidelity, uncommon formulas/fields, Word-vs-LibreOffice pagination, desktop validation.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportCycles.vb:97",
@@ -1572,9 +1572,9 @@
     "language": "VB.NET",
     "purpose": "Launch Word once; iterate Report Loop List IDs, change Current Parameters A11, prepare and render each; restore UI.",
     "status": "Partial",
-    "python_replacement": "cli.main report loop",
-    "gap": "JSON report IDs only; workbook loop list/recalculation, all feature branches, and UI restoration absent.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "pipeline.run_workbook; workbook.prepare; document.generate; renderer.finalize",
+    "gap": "Single/batch real-workbook pipeline implemented. Overall limits: chart fidelity, uncommon formulas/fields, Word-vs-LibreOffice pagination, desktop validation.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportCycles.vb:142",
@@ -1600,10 +1600,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Build substituted index_temp for mass tables, optionally auto-import, and optionally invoke TRW.AddMacros.",
-    "status": "Held",
-    "python_replacement": "",
-    "gap": "H02: workbook calculation/VBA strategy not implemented; retain complete behavior in scope.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.prepare/substitute_index/import_data/run_macro_hook",
+    "gap": "Index substitution and imports implemented; boutique VBA explicitly bypassed with a warning. A Python extension hook is available.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportCycles.vb:204",
@@ -1626,10 +1626,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Count contiguous report IDs starting at Report Loop List A2.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Complete",
+    "python_replacement": "workbook.report_ids",
+    "gap": "Contiguous IDs from A2 until first blank; count is len(report_ids).",
+    "verification": "tests/test_workbook.py: A/B batch and explicit ID list; tests/test_contracts.py: stop-at-blank IDs."
   },
   {
     "id": "vbnet:ReportCycles.vb:231",
@@ -1656,10 +1656,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Bind shared xlapp workbook from the VSTO host active workbook.",
-    "status": "Held",
-    "python_replacement": "",
-    "gap": "H02: workbook calculation/VBA strategy not implemented; retain complete behavior in scope.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "ReportWorkbook(path)",
+    "gap": "Workbook binding is explicit and independent of the active VSTO host. Original active-sheet/UI manipulation is host-specific.",
+    "verification": "tests/test_workbook.py: original files remain unchanged after execution."
   },
   {
     "id": "vbnet:ReportCycles.vb:236",
@@ -1680,10 +1680,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Ask to close all existing winword processes; kill them if the user agrees.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Excluded by user",
+    "python_replacement": "Scoped temporary files and isolated LibreOffice export profile",
+    "gap": "User excluded killing lingering Word processes; the Python engine does not launch Word.",
+    "verification": "Explicit user scope decision."
   },
   {
     "id": "vbnet:ReportWriter.vb:6",
@@ -1704,10 +1704,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Win32 declaration closing the system clipboard.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:7",
@@ -1727,10 +1727,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Win32 declaration clearing the system clipboard.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:8",
@@ -1751,10 +1751,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Win32 declaration opening the system clipboard.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:41",
@@ -1777,9 +1777,9 @@
     "language": "VB.NET",
     "purpose": "Find every text tag, apply Report Numbers column C value and Excel number format, split long text writes.",
     "status": "Partial",
-    "python_replacement": "engine.replace_text / render",
-    "gap": "No workbook C-column adapter, Excel format semantics, or legacy case-insensitive matching; new tag grammar is narrower.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "document.replace_literal/populate; workbook.formatted",
+    "gap": "Case-insensitive cross-run text replacement and supported number formats implemented. Text boxes/tracked changes and all Word stories/Excel formats lack parity evidence.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:101",
@@ -1800,9 +1800,9 @@
     "language": "VB.NET",
     "purpose": "Find each chart tag and insert the exported chart image at Word selection.",
     "status": "Partial",
-    "python_replacement": "engine.render chart branch",
-    "gap": "Standalone paragraph tags only; Excel chart export/styles/dimensions not reproduced.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "workbook.chart_element; engine.chart_image; document.populate",
+    "gap": "Dynamic bar chart series, source dimensions (proportionally constrained to available page/cell width) and override/default formatted alt text implemented; PNG transport replaces old GIF/JPG file workaround. Other chart types/Excel styling not equivalent.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:149",
@@ -1824,9 +1824,9 @@
     "language": "VB.NET",
     "purpose": "Find a table tag; insert published Excel HTML via CopyX; retry table-copy errors.",
     "status": "Partial",
-    "python_replacement": "engine.insert_table",
-    "gap": "Basic new table only; HTML-format fidelity, padding, inline positions, and retries not equivalent.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "workbook.table_element; document.insert_legacy_table/apply_cell_style/table_properties",
+    "gap": "Native DOCX tables replace both direct-cell and HTML transport. Merges/fonts/fills/borders/alignment/header counts/padding implemented. Conditional formatting, complex Excel HTML and pixel-identical widths remain gaps.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:227",
@@ -1844,10 +1844,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Wait five seconds through Excel Application.Wait.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:235",
@@ -1865,10 +1865,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Clear Excel clipboard via the Clipboard command bar.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:241",
@@ -1886,10 +1886,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Disable copying objects with Excel cells.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:246",
@@ -1907,10 +1907,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Clear Excel clipboard with legacy command ID 3634.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:252",
@@ -1928,10 +1928,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Open, clear, and close the Windows clipboard using Win32 APIs.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:265",
@@ -1949,10 +1949,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Alternate Windows clipboard-clear implementation.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:277",
@@ -1976,9 +1976,9 @@
     "language": "VB.NET",
     "purpose": "Open/copy template, cut sections, mass tables, populate elements, insert docs, renumber, change headers, normalize missing values, update TOC, export DOCX/DOC/PDF.",
     "status": "Partial",
-    "python_replacement": "engine.render / cli.main",
-    "gap": "Most orchestration branches absent; automatic TOC/pagination and DOC/PDF export absent.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "pipeline.run_workbook; document.generate; ReportWorkbook",
+    "gap": "Full reporting sequence and options implemented for supplied workbooks: sections, mass/text/chart/table branches, additions, replacements, headers and renderer. Exact Interop fidelity remains unproven; see explicit limits in CONVERSION_AUDIT.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits. Renderer tests verify final heading TOC pages and export."
   },
   {
     "id": "vbnet:ReportWriter.vb:456",
@@ -2003,9 +2003,9 @@
     "language": "VB.NET",
     "purpose": "Populate text/charts/tables; choose shell-table, direct-cell table, or Excel HTML branch; apply size, alignment, headers, alt metadata, spacing.",
     "status": "Partial",
-    "python_replacement": "engine.render",
-    "gap": "Only generic elements; no Report Numbers reader or three-way legacy table dispatch.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "pipeline.run_workbook; document.generate; ReportWorkbook",
+    "gap": "Full reporting sequence and options implemented for supplied workbooks: sections, mass/text/chart/table branches, additions, replacements, headers and renderer. Exact Interop fidelity remains unproven; see explicit limits in CONVERSION_AUDIT.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits. Renderer tests verify final heading TOC pages and export."
   },
   {
     "id": "vbnet:ReportWriter.vb:678",
@@ -2027,10 +2027,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Clipboard copy of Excel range then retry TableFill.",
-    "status": "Review candidate",
-    "python_replacement": "",
-    "gap": "Retained in inventory/scope. Static reference evidence and workbook hooks need review before any retirement; not declared unused.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:690",
@@ -2052,10 +2052,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Write configured headers/footers and alignment for up to five Word sections.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.postprocess; document.change_headers",
+    "gap": "Five configured section headers/footers and alignment implemented; unlinks inherited headers deliberately. First/even-page header variants and original legacy size/selection behavior need broader parity cases.",
+    "verification": "tests/test_document_features.py: five section headers/footers and alignments; advanced A/B pipeline."
   },
   {
     "id": "vbnet:ReportWriter.vb:724",
@@ -2101,10 +2101,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Use SmartSections flags to remove Xsection\u2026S/E regions or remove delimiters; insert reason text and bullet-adjacent edits.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.sections; document.cut_sections",
+    "gap": "Include/delete/reason and bullet-boundary behavior implemented; deleting intervening body tables tested. Markers across different table cells/complex nested ranges explicitly unsupported.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:825",
@@ -2126,10 +2126,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Replace TableX placeholder labels with numbers from SmartSections J:L.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Complete",
+    "python_replacement": "workbook.postprocess; document.generate/replace_literal",
+    "gap": "Configured contiguous caption/global pairs and all four missing sentinels applied in source order. Legacy substring replacement behavior retained.",
+    "verification": "tests/test_document_features.py: sequential replacements; tests/test_contracts.py: workbook mappings/options and all four sentinels; advanced A/B pipeline."
   },
   {
     "id": "vbnet:ReportWriter.vb:873",
@@ -2151,10 +2151,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Replace FigureX placeholder labels with numbers from SmartSections P:R.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Complete",
+    "python_replacement": "workbook.postprocess; document.generate/replace_literal",
+    "gap": "Configured contiguous caption/global pairs and all four missing sentinels applied in source order. Legacy substring replacement behavior retained.",
+    "verification": "tests/test_document_features.py: sequential replacements; tests/test_contracts.py: workbook mappings/options and all four sentinels; advanced A/B pipeline."
   },
   {
     "id": "vbnet:ReportWriter.vb:926",
@@ -2174,10 +2174,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Delete content between start/end markers with a Word wildcard range search.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.sections; document.cut_sections",
+    "gap": "Include/delete/reason and bullet-boundary behavior implemented; deleting intervening body tables tested. Markers across different table cells/complex nested ranges explicitly unsupported.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:936",
@@ -2197,10 +2197,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Delete section delimiter markers while retaining their content.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.sections; document.cut_sections",
+    "gap": "Include/delete/reason and bullet-boundary behavior implemented; deleting intervening body tables tested. Markers across different table cells/complex nested ranges explicitly unsupported.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:950",
@@ -2243,10 +2243,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Apply contiguous GlobalReplace sheet source/destination rows.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Complete",
+    "python_replacement": "workbook.postprocess; document.generate/replace_literal",
+    "gap": "Configured contiguous caption/global pairs and all four missing sentinels applied in source order. Legacy substring replacement behavior retained.",
+    "verification": "tests/test_document_features.py: sequential replacements; tests/test_contracts.py: workbook mappings/options and all four sentinels; advanced A/B pipeline."
   },
   {
     "id": "vbnet:ReportWriter.vb:1024",
@@ -2266,10 +2266,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Repeated case-insensitive literal Word find/replace of arbitrary text.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "document.replace_literal/populate; workbook.formatted",
+    "gap": "Case-insensitive cross-run text replacement and supported number formats implemented. Text boxes/tracked changes and all Word stories/Excel formats lack parity evidence.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1053",
@@ -2289,10 +2289,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Replace four specific formatted missing-value strings with N/A.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Complete",
+    "python_replacement": "workbook.postprocess; document.generate/replace_literal",
+    "gap": "Configured contiguous caption/global pairs and all four missing sentinels applied in source order. Legacy substring replacement behavior retained.",
+    "verification": "tests/test_document_features.py: sequential replacements; tests/test_contracts.py: workbook mappings/options and all four sentinels; advanced A/B pipeline."
   },
   {
     "id": "vbnet:ReportWriter.vb:1164",
@@ -2314,10 +2314,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Resolve additional DOCX files from Add Docx rows; insert at tags or emit missing-file text.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.postprocess; document.insert_documents",
+    "gap": "Relationship/style-aware DOCX insertion and legacy missing-file message implemented. Tags must be body paragraphs; inserted documents retain master header/footer policy, so distinct appended-section headers need more work.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1218",
@@ -2338,10 +2338,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Replace section tag with inserted document content, or a missing-file message; retry on insertion errors.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.postprocess; document.insert_documents",
+    "gap": "Relationship/style-aware DOCX insertion and legacy missing-file message implemented. Tags must be body paragraphs; inserted documents retain master header/footer policy, so distinct appended-section headers need more work.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1275",
@@ -2363,10 +2363,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Select/copy additional document content and retry SectionFill.",
-    "status": "Review candidate",
-    "python_replacement": "",
-    "gap": "Retained in inventory/scope. Static reference evidence and workbook hooks need review before any retirement; not declared unused.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1293",
@@ -2390,9 +2390,9 @@
     "language": "VB.NET",
     "purpose": "Build chart descriptions from override column or formatted 2/3/many-column ranges; assign to images lacking alt text.",
     "status": "Partial",
-    "python_replacement": "cli.resolve / engine.render",
-    "gap": "Data-derived alt text only; workbook override column, Excel number formats, and legacy multi-column logic absent.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "workbook.chart_element; engine.chart_image; document.populate",
+    "gap": "Dynamic bar chart series, source dimensions (proportionally constrained to available page/cell width) and override/default formatted alt text implemented; PNG transport replaces old GIF/JPG file workaround. Other chart types/Excel styling not equivalent.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1402",
@@ -2415,10 +2415,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Fill existing Word table shell from formatted Excel cells; support Variable Row insertion or fixed rows.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "document.fill_shell",
+    "gap": "Fixed and variable rows preserve shell styles, reject truncation, and write metadata. Complex premerged shell traversal and complete Word-selection equivalence require additional templates.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1464",
@@ -2438,10 +2438,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Find direct-table tag and invoke UltTableCopy.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.table_element; document.insert_legacy_table/apply_cell_style/table_properties",
+    "gap": "Native DOCX tables replace both direct-cell and HTML transport. Merges/fonts/fills/borders/alignment/header counts/padding implemented. Conditional formatting, complex Excel HTML and pixel-identical widths remain gaps.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1511",
@@ -2461,10 +2461,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Find existing-table-shell tag and invoke UltTableFill.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "document.fill_shell",
+    "gap": "Fixed and variable rows preserve shell styles, reject truncation, and write metadata. Complex premerged shell traversal and complete Word-selection equivalence require additional templates.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1558",
@@ -2488,9 +2488,9 @@
     "language": "VB.NET",
     "purpose": "Create Word table from Excel range; reproduce merged cells, borders, alignment, fonts, colors, formatted values, repeating headers, and metadata.",
     "status": "Partial",
-    "python_replacement": "engine.insert_table",
-    "gap": "No merged cells, per-cell Excel styles, arbitrary header-row count, or legacy fit/alignment settings.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "workbook.table_element; document.insert_legacy_table/apply_cell_style/table_properties",
+    "gap": "Native DOCX tables replace both direct-cell and HTML transport. Merges/fonts/fills/borders/alignment/header counts/padding implemented. Conditional formatting, complex Excel HTML and pixel-identical widths remain gaps.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1790",
@@ -2513,9 +2513,9 @@
     "language": "VB.NET",
     "purpose": "Insert Excel-exported HTML, adjust padding/cleanup artifacts, manipulate selection around inserted table.",
     "status": "Partial",
-    "python_replacement": "engine.insert_table",
-    "gap": "Direct DOCX table avoids HTML transport but does not reproduce Excel HTML formatting or padding.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "workbook.table_element; document.insert_legacy_table/apply_cell_style/table_properties",
+    "gap": "Native DOCX tables replace both direct-cell and HTML transport. Merges/fonts/fills/borders/alignment/header counts/padding implemented. Conditional formatting, complex Excel HTML and pixel-identical widths remain gaps.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1838",
@@ -2536,9 +2536,9 @@
     "language": "VB.NET",
     "purpose": "Export named Excel chart; capture chart width/height; uses GIF filter with a .jpg filename.",
     "status": "Partial",
-    "python_replacement": "engine.chart_image",
-    "gap": "Generic vertical bars only; no existing Excel chart types, styles, labels, source ranges, or dimensions.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "workbook.chart_element; engine.chart_image; document.populate",
+    "gap": "Dynamic bar chart series, source dimensions (proportionally constrained to available page/cell width) and override/default formatted alt text implemented; PNG transport replaces old GIF/JPG file workaround. Other chart types/Excel styling not equivalent.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1855",
@@ -2559,9 +2559,9 @@
     "language": "VB.NET",
     "purpose": "Wait for image file then embed it with captured Excel chart dimensions.",
     "status": "Partial",
-    "python_replacement": "engine.render chart branch",
-    "gap": "PNG embed and explicit width only; Excel dimensions, inline placement, and legacy file-readiness contract absent.",
-    "verification": "Related Python unit/example checks only; no complete legacy parity test."
+    "python_replacement": "workbook.chart_element; engine.chart_image; document.populate",
+    "gap": "Dynamic bar chart series, source dimensions (proportionally constrained to available page/cell width) and override/default formatted alt text implemented; PNG transport replaces old GIF/JPG file workaround. Other chart types/Excel styling not equivalent.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1868",
@@ -2581,10 +2581,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Strip Excel conditional HTML markup and apply selected left/right/top padding substitutions.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1927",
@@ -2604,10 +2604,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Strip Excel conditional HTML markup without padding substitutions.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:1974",
@@ -2625,10 +2625,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Selection-based cleanup below an inserted table; delete selection on table-selection failure.",
-    "status": "Review candidate",
-    "python_replacement": "",
-    "gap": "Retained in inventory/scope. Static reference evidence and workbook hooks need review before any retirement; not declared unused.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:2000",
@@ -2646,10 +2646,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Selection-based cleanup above an inserted table; backspace recovery on failure.",
-    "status": "Review candidate",
-    "python_replacement": "",
-    "gap": "Retained in inventory/scope. Static reference evidence and workbook hooks need review before any retirement; not declared unused.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:2027",
@@ -2667,10 +2667,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Parse the starting column from a dollar-qualified Excel address.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:ReportWriter.vb:2045",
@@ -2688,10 +2688,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Parse starting row from an Excel range; legacy single-cell branch returns zero.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:ReportWriter.vb:2062",
@@ -2709,10 +2709,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Return end-column minus start-column (a movement count, not inclusive width).",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:ReportWriter.vb:2083",
@@ -2730,10 +2730,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Return end-row minus start-row (a movement count, not inclusive height).",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:ReportWriter.vb:2101",
@@ -2778,10 +2778,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Convert one/two-letter column names using Firstchar plus Secondchar.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:ReportWriter.vb:2113",
@@ -2801,10 +2801,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map first letter to a multiple-of-26 column offset; percent sentinel means zero.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:ReportWriter.vb:2175",
@@ -2824,10 +2824,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map second letter to 1\u201326.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:ReportWriter.vb:2236",
@@ -2847,10 +2847,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Convert numeric column index to a one/two-letter address through Convertme.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:ReportWriter.vb:2245",
@@ -2870,10 +2870,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map 0\u201326 to empty/A\u2013Z; return A outside that range.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
   },
   {
     "id": "vbnet:ReportWriter.vb:2307",
@@ -2893,10 +2893,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map Excel horizontal alignment constants to Word paragraph alignment.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.cell_style; document.apply_cell_style",
+    "gap": "Normal openpyxl alignments and border families mapped to DOCX. Excel distributed/conditional layouts, exact enum/line-width correspondence not all verified.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:2316",
@@ -2916,10 +2916,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map Excel vertical alignment constants to Word cell alignment (includes legacy value requiring validation).",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.cell_style; document.apply_cell_style",
+    "gap": "Normal openpyxl alignments and border families mapped to DOCX. Excel distributed/conditional layouts, exact enum/line-width correspondence not all verified.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:2325",
@@ -2939,10 +2939,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map Excel border weights to Word line-width constants.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.cell_style; document.apply_cell_style",
+    "gap": "Normal openpyxl alignments and border families mapped to DOCX. Excel distributed/conditional layouts, exact enum/line-width correspondence not all verified.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ReportWriter.vb:2334",
@@ -2962,10 +2962,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Map Excel line-style constants to Word border-style constants.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.cell_style; document.apply_cell_style",
+    "gap": "Normal openpyxl alignments and border families mapped to DOCX. Excel distributed/conditional layouts, exact enum/line-width correspondence not all verified.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:ThisAddIn.Designer.vb:32",
@@ -3462,10 +3462,10 @@
     "static_reference_candidates": [],
     "language": "VB.NET",
     "purpose": "Force two garbage-collection/finalizer cycles at VSTO shutdown.",
-    "status": "Replacement pending",
-    "python_replacement": "",
-    "gap": "Office/clipboard/process-specific mechanism; replace outcome with scoped resources and file handling, do not blindly reproduce desktop workarounds.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Replaced mechanism",
+    "python_replacement": "Workbook.close; temporary file contexts",
+    "gap": "VSTO GC/finalizer shutdown replaced by scoped non-COM resources. Retaining a ribbon would still require host lifecycle code.",
+    "verification": "Workbook and renderer tests."
   },
   {
     "id": "vbnet:WaitProcedure.vb:6",
@@ -3487,10 +3487,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Poll file lock with two-second sleeps; no timeout.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "files.wait_for_file/save_document/save_bytes; renderer.export",
+    "gap": "Existence/owned output readiness and bounded timeouts replace global polling. Exclusive locks differ by platform; Windows lock behavior not tested.",
+    "verification": "tests/test_contracts.py: file existence timeout and output collisions; renderer failure tests."
   },
   {
     "id": "vbnet:WaitProcedure.vb:23",
@@ -3514,10 +3514,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Require existing file, then poll file lock every 200ms; no timeout.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "files.wait_for_file/save_document/save_bytes; renderer.export",
+    "gap": "Existence/owned output readiness and bounded timeouts replace global polling. Exclusive locks differ by platform; Windows lock behavior not tested.",
+    "verification": "tests/test_contracts.py: file existence timeout and output collisions; renderer failure tests."
   },
   {
     "id": "vbnet:WaitProcedure.vb:44",
@@ -3538,10 +3538,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Retry existence ten times with 200ms sleeps; throw if still missing.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "files.wait_for_file/save_document/save_bytes; renderer.export",
+    "gap": "Existence/owned output readiness and bounded timeouts replace global polling. Exclusive locks differ by platform; Windows lock behavior not tested.",
+    "verification": "tests/test_contracts.py: file existence timeout and output collisions; renderer failure tests."
   },
   {
     "id": "vbnet:WaitProcedure.vb:69",
@@ -3562,10 +3562,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Try exclusive read/write file open; any exception is treated as in-use.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "files.wait_for_file/save_document/save_bytes; renderer.export",
+    "gap": "Existence/owned output readiness and bounded timeouts replace global polling. Exclusive locks differ by platform; Windows lock behavior not tested.",
+    "verification": "tests/test_contracts.py: file existence timeout and output collisions; renderer failure tests."
   },
   {
     "id": "vbnet:WaitProcedure.vb:81",
@@ -3591,10 +3591,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Return System.IO.File.Exists result.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "files.wait_for_file/save_document/save_bytes; renderer.export",
+    "gap": "Existence/owned output readiness and bounded timeouts replace global polling. Exclusive locks differ by platform; Windows lock behavior not tested.",
+    "verification": "tests/test_contracts.py: file existence timeout and output collisions; renderer failure tests."
   },
   {
     "id": "vbnet:bullets.vb:5",
@@ -3616,10 +3616,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Turn imported rows into header/bullet pairs, append parenthetical counts, apply fonts, and emit no-common-causes fallback.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.transform_bullets",
+    "gap": "All three data transforms, headers/counts, fonts and empty fallback strings implemented. Worksheet layout/glyph fidelity outside supplied contracts needs more input cases.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:bullets.vb:57",
@@ -3641,10 +3641,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Alternate header/bullet transform without counts; emit HCBS Medical Review no-errors fallback.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.transform_bullets",
+    "gap": "All three data transforms, headers/counts, fonts and empty fallback strings implemented. Worksheet layout/glyph fidelity outside supplied contracts needs more input cases.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vbnet:bullets.vb:102",
@@ -3666,10 +3666,10 @@
     ],
     "language": "VB.NET",
     "purpose": "Alternate header/bullet transform without counts; emit HCBS Data Processing no-errors fallback.",
-    "status": "Not converted",
-    "python_replacement": "",
-    "gap": "No behavior-equivalent Python implementation or parity acceptance test exists yet.",
-    "verification": "Source inspection only; not converted or parity-verified."
+    "status": "Partial",
+    "python_replacement": "workbook.transform_bullets",
+    "gap": "All three data transforms, headers/counts, fonts and empty fallback strings implemented. Worksheet layout/glyph fidelity outside supplied contracts needs more input cases.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
   },
   {
     "id": "vba:The Report Writer - Blank Shell.xlsm:ProcessReports.bas:2",
@@ -3688,10 +3688,10 @@
     ],
     "language": "VBA",
     "purpose": "Save workbook; create TRWHubToKernel.xlsx with hub path/name and RunOne; launch external kernel.",
-    "status": "Held",
-    "python_replacement": "",
-    "gap": "H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package.",
-    "verification": "Extracted VBA source only; no macro execution or parity test."
+    "status": "Partial",
+    "python_replacement": "cli.main / pipeline.run_workbook / --list-charts",
+    "gap": "Single/batch and chart listing are available directly in Python. Original workbook-to-kernel handoff/selected-chart UI not ported; kernel executable is absent.",
+    "verification": "VBA not executed. Equivalent CLI/report outcomes tested; old handoff protocol remains unverified."
   },
   {
     "id": "vba:The Report Writer - Blank Shell.xlsm:ProcessReports.bas:38",
@@ -3710,10 +3710,10 @@
     ],
     "language": "VBA",
     "purpose": "Save workbook; create TRWHubToKernel.xlsx with RunMany; launch external kernel.",
-    "status": "Held",
-    "python_replacement": "",
-    "gap": "H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package.",
-    "verification": "Extracted VBA source only; no macro execution or parity test."
+    "status": "Partial",
+    "python_replacement": "cli.main / pipeline.run_workbook / --list-charts",
+    "gap": "Single/batch and chart listing are available directly in Python. Original workbook-to-kernel handoff/selected-chart UI not ported; kernel executable is absent.",
+    "verification": "VBA not executed. Equivalent CLI/report outcomes tested; old handoff protocol remains unverified."
   },
   {
     "id": "vba:The Report Writer - Blank Shell.xlsm:ProcessReports.bas:73",
@@ -3730,10 +3730,10 @@
     "worksheet_names": [],
     "language": "VBA",
     "purpose": "Launch Report Writer Kernel.exe from configured folder through Windows Shell.",
-    "status": "Held",
-    "python_replacement": "",
-    "gap": "H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package.",
-    "verification": "Extracted VBA source only; no macro execution or parity test."
+    "status": "Partial",
+    "python_replacement": "cli.main / pipeline.run_workbook / --list-charts",
+    "gap": "Single/batch and chart listing are available directly in Python. Original workbook-to-kernel handoff/selected-chart UI not ported; kernel executable is absent.",
+    "verification": "VBA not executed. Equivalent CLI/report outcomes tested; old handoff protocol remains unverified."
   },
   {
     "id": "vba:The Report Writer - Finished Example.xlsm:ProcessReports.bas:2",
@@ -3752,10 +3752,10 @@
     ],
     "language": "VBA",
     "purpose": "Save workbook; create TRWHubToKernel.xlsx with hub path/name and RunOne; launch external kernel.",
-    "status": "Held",
-    "python_replacement": "",
-    "gap": "H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package.",
-    "verification": "Extracted VBA source only; no macro execution or parity test."
+    "status": "Partial",
+    "python_replacement": "cli.main / pipeline.run_workbook / --list-charts",
+    "gap": "Single/batch and chart listing are available directly in Python. Original workbook-to-kernel handoff/selected-chart UI not ported; kernel executable is absent.",
+    "verification": "VBA not executed. Equivalent CLI/report outcomes tested; old handoff protocol remains unverified."
   },
   {
     "id": "vba:The Report Writer - Finished Example.xlsm:ProcessReports.bas:38",
@@ -3774,10 +3774,10 @@
     ],
     "language": "VBA",
     "purpose": "Save workbook; create TRWHubToKernel.xlsx with RunMany; launch external kernel.",
-    "status": "Held",
-    "python_replacement": "",
-    "gap": "H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package.",
-    "verification": "Extracted VBA source only; no macro execution or parity test."
+    "status": "Partial",
+    "python_replacement": "cli.main / pipeline.run_workbook / --list-charts",
+    "gap": "Single/batch and chart listing are available directly in Python. Original workbook-to-kernel handoff/selected-chart UI not ported; kernel executable is absent.",
+    "verification": "VBA not executed. Equivalent CLI/report outcomes tested; old handoff protocol remains unverified."
   },
   {
     "id": "vba:The Report Writer - Finished Example.xlsm:ProcessReports.bas:73",
@@ -3794,10 +3794,10 @@
     "worksheet_names": [],
     "language": "VBA",
     "purpose": "Launch Report Writer Kernel.exe from configured folder through Windows Shell.",
-    "status": "Held",
-    "python_replacement": "",
-    "gap": "H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package.",
-    "verification": "Extracted VBA source only; no macro execution or parity test."
+    "status": "Partial",
+    "python_replacement": "cli.main / pipeline.run_workbook / --list-charts",
+    "gap": "Single/batch and chart listing are available directly in Python. Original workbook-to-kernel handoff/selected-chart UI not ported; kernel executable is absent.",
+    "verification": "VBA not executed. Equivalent CLI/report outcomes tested; old handoff protocol remains unverified."
   },
   {
     "id": "vba:Demo Project 1.xlsm:TRW.bas:2",
@@ -3814,10 +3814,10 @@
     "worksheet_names": [],
     "language": "VBA",
     "purpose": "Display a Running Excel Macros diagnostic message.",
-    "status": "Held",
+    "status": "Review candidate",
     "python_replacement": "",
-    "gap": "H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package.",
-    "verification": "Extracted VBA source only; no macro execution or parity test."
+    "gap": "Diagnostic retained; VBA execution deferred.",
+    "verification": "VBA not executed. Equivalent CLI/report outcomes tested; old handoff protocol remains unverified."
   },
   {
     "id": "vba:Demo Project 1.xlsm:TRW.bas:12",
@@ -3834,10 +3834,10 @@
     "worksheet_names": [],
     "language": "VBA",
     "purpose": "User-defined macro hook invoked by CommonCore; supplied demo body contains only a commented test call.",
-    "status": "Held",
+    "status": "Deferred by user",
     "python_replacement": "",
-    "gap": "H02: runtime VBA extension contract unimplemented.",
-    "verification": "Extracted VBA source only; no macro execution or parity test."
+    "gap": "User boutique VBA queries explicitly bypassed for now; On flag emits a warning.",
+    "verification": "VBA not executed. Equivalent CLI/report outcomes tested; old handoff protocol remains unverified."
   },
   {
     "id": "vba:Demo Project 1.xlsm:TRW.bas:16",
@@ -3854,9 +3854,9 @@
     "worksheet_names": [],
     "language": "VBA",
     "purpose": "Display selected Excel chart name stripped of worksheet prefix.",
-    "status": "Held",
-    "python_replacement": "",
-    "gap": "H04: workbook macro/old kernel interface unimplemented; legacy kernel executable is absent from supplied package.",
-    "verification": "Extracted VBA source only; no macro execution or parity test."
+    "status": "Partial",
+    "python_replacement": "cli.main / pipeline.run_workbook / --list-charts",
+    "gap": "Single/batch and chart listing are available directly in Python. Original workbook-to-kernel handoff/selected-chart UI not ported; kernel executable is absent.",
+    "verification": "VBA not executed. Equivalent CLI/report outcomes tested; old handoff protocol remains unverified."
   }
 ]

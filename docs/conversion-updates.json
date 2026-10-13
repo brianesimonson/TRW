@@ -1,0 +1,644 @@
+{
+  "AccessX.vb:Test100": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "AccessX.vb:CheckIdentityStrict": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "AccessX.vb:CheckIdentity": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "AccessX.vb:CheckStrictness": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "AccessX.vb:LogTransaction": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "AccessX.vb:RequestReport": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "AccessX.vb:VerifyLicense": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "AccessX.vb:Testrun": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "AccessX.vb:SetConnstr": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "EncryptX.vb:Encrypt": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "EncryptX.vb:Decrypt": {
+    "status": "Excluded by user",
+    "python_replacement": "",
+    "gap": "Legacy Access identity/license/logging and associated encryption excluded by user direction; replacement authentication is future work.",
+    "verification": "Explicit user scope decision; no identity/license compatibility claimed."
+  },
+  "ReportCycles.vb:KillWord": {
+    "status": "Excluded by user",
+    "python_replacement": "Scoped temporary files and isolated LibreOffice export profile",
+    "gap": "User excluded killing lingering Word processes; the Python engine does not launch Word.",
+    "verification": "Explicit user scope decision."
+  },
+  "ReportCycles.vb:RunonestateInLoop": {
+    "status": "Partial",
+    "python_replacement": "pipeline.run_workbook; workbook.prepare; document.generate; renderer.finalize",
+    "gap": "Single/batch real-workbook pipeline implemented. Overall limits: chart fidelity, uncommon formulas/fields, Word-vs-LibreOffice pagination, desktop validation.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportCycles.vb:Runonestate": {
+    "status": "Partial",
+    "python_replacement": "pipeline.run_workbook; workbook.prepare; document.generate; renderer.finalize",
+    "gap": "Single/batch real-workbook pipeline implemented. Overall limits: chart fidelity, uncommon formulas/fields, Word-vs-LibreOffice pagination, desktop validation.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportCycles.vb:LoopReports": {
+    "status": "Partial",
+    "python_replacement": "pipeline.run_workbook; workbook.prepare; document.generate; renderer.finalize",
+    "gap": "Single/batch real-workbook pipeline implemented. Overall limits: chart fidelity, uncommon formulas/fields, Word-vs-LibreOffice pagination, desktop validation.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportCycles.vb:CommonCore": {
+    "status": "Partial",
+    "python_replacement": "workbook.prepare/substitute_index/import_data/run_macro_hook",
+    "gap": "Index substitution and imports implemented; boutique VBA explicitly bypassed with a warning. A Python extension hook is available.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportCycles.vb:CountLoopReports": {
+    "status": "Complete",
+    "python_replacement": "workbook.report_ids",
+    "gap": "Contiguous IDs from A2 until first blank; count is len(report_ids).",
+    "verification": "tests/test_workbook.py: A/B batch and explicit ID list; tests/test_contracts.py: stop-at-blank IDs."
+  },
+  "ReportCycles.vb:SetThisWorkbook": {
+    "status": "Replaced mechanism",
+    "python_replacement": "ReportWorkbook(path)",
+    "gap": "Workbook binding is explicit and independent of the active VSTO host. Original active-sheet/UI manipulation is host-specific.",
+    "verification": "tests/test_workbook.py: original files remain unchanged after execution."
+  },
+  "ReportCycles.vb:MyForm": {
+    "status": "Partial",
+    "python_replacement": "gui.ReportWriterApp / pipeline progress callback",
+    "gap": "Desktop progress UI implemented; Windows/Tk interaction not exercised in this Linux cloud. Cancellation/installer/ribbon bridge remain pending.",
+    "verification": "CLI progress events available; GUI source inspection only."
+  },
+  "ReportCycles.vb:New": {
+    "status": "Replaced mechanism",
+    "python_replacement": "WorkbookError / DocumentError / RendererError / FileNotFoundError",
+    "gap": "Use explicit Python exceptions and CLI/GUI error reporting rather than custom VB exception wrappers.",
+    "verification": "Failure cases in workbook/document/renderer tests; Windows dialogs untested."
+  },
+  "GrabFigureData.vb:GrabdataExcel4": {
+    "status": "Partial",
+    "python_replacement": "workbook.import_data/read_source; workbook.chart_element",
+    "gap": "CSV/XLSX inputs, typed data, staging-free offsets and blank clearing implemented. Excel QueryTables locale/type inference and legacy .xls inputs are not reproduced; unsupported input types fail.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "GrabFigureData.vb:CallFigures": {
+    "status": "Partial",
+    "python_replacement": "workbook.import_data/read_source; workbook.chart_element",
+    "gap": "CSV/XLSX inputs, typed data, staging-free offsets and blank clearing implemented. Excel QueryTables locale/type inference and legacy .xls inputs are not reproduced; unsupported input types fail.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "GrabFigureData.vb:ImportCSV": {
+    "status": "Partial",
+    "python_replacement": "workbook.import_data/read_source; workbook.chart_element",
+    "gap": "CSV/XLSX inputs, typed data, staging-free offsets and blank clearing implemented. Excel QueryTables locale/type inference and legacy .xls inputs are not reproduced; unsupported input types fail.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "GrabFigureData.vb:ImportCSVsmart": {
+    "status": "Partial",
+    "python_replacement": "workbook.import_data/read_source; workbook.chart_element",
+    "gap": "CSV/XLSX inputs, typed data, staging-free offsets and blank clearing implemented. Excel QueryTables locale/type inference and legacy .xls inputs are not reproduced; unsupported input types fail.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "GrabFigureData.vb:JustImportMe3": {
+    "status": "Partial",
+    "python_replacement": "pipeline.run_workbook(import_only=True); CLI --import-only; GUI Import only",
+    "gap": "Writes separate prepared workbook with formula caches and original VBA bytes. Excel extensions/drawing fidelity on roundtrip and Windows UI need validation.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "GrabFigureData.vb:Makebullets": {
+    "status": "Partial",
+    "python_replacement": "workbook.make_bullets / transform_bullets",
+    "gap": "All three modes exposed and tested as opt-in transformations; legacy CallFigures commented out this call, so automatic imports do not enable it.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "GrabFigureData.vb:ColNum": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label",
+    "gap": "Valid address conversion supports more columns; legacy invalid-input sentinel 1000/AA intentionally replaced by errors/valid modern columns.",
+    "verification": "tests/test_contracts.py: valid/invalid column and range cases."
+  },
+  "GrabFigureData.vb:ColLetter": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label",
+    "gap": "Valid address conversion supports more columns; legacy invalid-input sentinel 1000/AA intentionally replaced by errors/valid modern columns.",
+    "verification": "tests/test_contracts.py: valid/invalid column and range cases."
+  },
+  "GrabFigureData.vb:NAR": {
+    "status": "Replaced mechanism",
+    "python_replacement": "ReportWorkbook.close; temporary directory contexts",
+    "gap": "No COM objects in engine; close workbook files and owned temporary resources.",
+    "verification": "Workbook immutability and renderer integration tests; no Windows COM leak assertion needed."
+  },
+  "ChangeChart.vb:CHrt": {
+    "status": "Partial",
+    "python_replacement": "workbook._chart_names/chart_element",
+    "gap": "Named chart source ranges read freshly per report; supports clustered/standard bar charts with multiple series and dimensions. Excel appearance/other chart types are unresolved; unsupported types fail.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "MassTabMake.vb:Main": {
+    "status": "Partial",
+    "python_replacement": "workbook.mass_elements; document.fill_shell",
+    "gap": "Modes 1/3 fixed shell, mode 2 variable rows until blank, scalar values and column formats implemented. Unsupported Excel formats fail; complex merged shells/Word selection parity need more cases.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "MassTabMake.vb:SearchAndReplace": {
+    "status": "Partial",
+    "python_replacement": "workbook.mass_elements; document.fill_shell",
+    "gap": "Modes 1/3 fixed shell, mode 2 variable rows until blank, scalar values and column formats implemented. Unsupported Excel formats fail; complex merged shells/Word selection parity need more cases.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "MassTabMake.vb:Xformat": {
+    "status": "Partial",
+    "python_replacement": "workbook.parse_formats",
+    "gap": "Column formatN segments parsed; malformed/out-of-order definitions fail explicitly rather than emulating VB Mid behavior.",
+    "verification": "tests/test_workbook.py: all mass modes and scalar formatting; tests/test_contracts.py: malformed formats."
+  },
+  "MassTabMake.vb:Startcolumn1": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "MassTabMake.vb:Startrow1": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "MassTabMake.vb:Totalcolumnmoves": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "MassTabMake.vb:Totalrowmoves": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "MassTabMake.vb:Countcolumns": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "MassTabMake.vb:Firstchar": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "MassTabMake.vb:Secondchar": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "MassTabMake.vb:CellToRange": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "MassTabMake.vb:Convertme": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "ReportWriter.vb:Startcolumn1": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "ReportWriter.vb:Startrow1": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "ReportWriter.vb:Totalcolumnmoves": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "ReportWriter.vb:Totalrowmoves": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "ReportWriter.vb:Countcolumns": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "ReportWriter.vb:Firstchar": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "ReportWriter.vb:Secondchar": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "ReportWriter.vb:CellToRange": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "ReportWriter.vb:Convertme": {
+    "status": "Partial",
+    "python_replacement": "legacy.column_number/column_label/range_coordinates/range_moves",
+    "gap": "Valid addresses use openpyxl utilities; legacy invalid-input sentinels, two-letter limits and single-cell row-zero bug intentionally not reproduced.",
+    "verification": "tests/test_contracts.py: valid/invalid addresses including single cells and AZ."
+  },
+  "ReportWriter.vb:RunReport1": {
+    "status": "Partial",
+    "python_replacement": "pipeline.run_workbook; document.generate; ReportWorkbook",
+    "gap": "Full reporting sequence and options implemented for supplied workbooks: sections, mass/text/chart/table branches, additions, replacements, headers and renderer. Exact Interop fidelity remains unproven; see explicit limits in CONVERSION_AUDIT.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits. Renderer tests verify final heading TOC pages and export."
+  },
+  "ReportWriter.vb:Main_after_word_tool": {
+    "status": "Partial",
+    "python_replacement": "pipeline.run_workbook; document.generate; ReportWorkbook",
+    "gap": "Full reporting sequence and options implemented for supplied workbooks: sections, mass/text/chart/table branches, additions, replacements, headers and renderer. Exact Interop fidelity remains unproven; see explicit limits in CONVERSION_AUDIT.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits. Renderer tests verify final heading TOC pages and export."
+  },
+  "ReportWriter.vb:SearchAndReplace": {
+    "status": "Partial",
+    "python_replacement": "document.replace_literal/populate; workbook.formatted",
+    "gap": "Case-insensitive cross-run text replacement and supported number formats implemented. Text boxes/tracked changes and all Word stories/Excel formats lack parity evidence.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:ReplaceMe": {
+    "status": "Partial",
+    "python_replacement": "document.replace_literal/populate; workbook.formatted",
+    "gap": "Case-insensitive cross-run text replacement and supported number formats implemented. Text boxes/tracked changes and all Word stories/Excel formats lack parity evidence.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:RenameTables": {
+    "status": "Complete",
+    "python_replacement": "workbook.postprocess; document.generate/replace_literal",
+    "gap": "Configured contiguous caption/global pairs and all four missing sentinels applied in source order. Legacy substring replacement behavior retained.",
+    "verification": "tests/test_document_features.py: sequential replacements; tests/test_contracts.py: workbook mappings/options and all four sentinels; advanced A/B pipeline."
+  },
+  "ReportWriter.vb:RenameFigures": {
+    "status": "Complete",
+    "python_replacement": "workbook.postprocess; document.generate/replace_literal",
+    "gap": "Configured contiguous caption/global pairs and all four missing sentinels applied in source order. Legacy substring replacement behavior retained.",
+    "verification": "tests/test_document_features.py: sequential replacements; tests/test_contracts.py: workbook mappings/options and all four sentinels; advanced A/B pipeline."
+  },
+  "ReportWriter.vb:GlobalReplace": {
+    "status": "Complete",
+    "python_replacement": "workbook.postprocess; document.generate/replace_literal",
+    "gap": "Configured contiguous caption/global pairs and all four missing sentinels applied in source order. Legacy substring replacement behavior retained.",
+    "verification": "tests/test_document_features.py: sequential replacements; tests/test_contracts.py: workbook mappings/options and all four sentinels; advanced A/B pipeline."
+  },
+  "ReportWriter.vb:MissingToNA": {
+    "status": "Complete",
+    "python_replacement": "workbook.postprocess; document.generate/replace_literal",
+    "gap": "Configured contiguous caption/global pairs and all four missing sentinels applied in source order. Legacy substring replacement behavior retained.",
+    "verification": "tests/test_document_features.py: sequential replacements; tests/test_contracts.py: workbook mappings/options and all four sentinels; advanced A/B pipeline."
+  },
+  "ReportWriter.vb:ChartFill": {
+    "status": "Partial",
+    "python_replacement": "workbook.chart_element; engine.chart_image; document.populate",
+    "gap": "Dynamic bar chart series, source dimensions (proportionally constrained to available page/cell width) and override/default formatted alt text implemented; PNG transport replaces old GIF/JPG file workaround. Other chart types/Excel styling not equivalent.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:ExportPic": {
+    "status": "Partial",
+    "python_replacement": "workbook.chart_element; engine.chart_image; document.populate",
+    "gap": "Dynamic bar chart series, source dimensions (proportionally constrained to available page/cell width) and override/default formatted alt text implemented; PNG transport replaces old GIF/JPG file workaround. Other chart types/Excel styling not equivalent.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:InsertPic": {
+    "status": "Partial",
+    "python_replacement": "workbook.chart_element; engine.chart_image; document.populate",
+    "gap": "Dynamic bar chart series, source dimensions (proportionally constrained to available page/cell width) and override/default formatted alt text implemented; PNG transport replaces old GIF/JPG file workaround. Other chart types/Excel styling not equivalent.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:AssignAlt": {
+    "status": "Partial",
+    "python_replacement": "workbook.chart_element; engine.chart_image; document.populate",
+    "gap": "Dynamic bar chart series, source dimensions (proportionally constrained to available page/cell width) and override/default formatted alt text implemented; PNG transport replaces old GIF/JPG file workaround. Other chart types/Excel styling not equivalent.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:TableFill": {
+    "status": "Partial",
+    "python_replacement": "workbook.table_element; document.insert_legacy_table/apply_cell_style/table_properties",
+    "gap": "Native DOCX tables replace both direct-cell and HTML transport. Merges/fonts/fills/borders/alignment/header counts/padding implemented. Conditional formatting, complex Excel HTML and pixel-identical widths remain gaps.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:CopyX": {
+    "status": "Partial",
+    "python_replacement": "workbook.table_element; document.insert_legacy_table/apply_cell_style/table_properties",
+    "gap": "Native DOCX tables replace both direct-cell and HTML transport. Merges/fonts/fills/borders/alignment/header counts/padding implemented. Conditional formatting, complex Excel HTML and pixel-identical widths remain gaps.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:UltTable": {
+    "status": "Partial",
+    "python_replacement": "workbook.table_element; document.insert_legacy_table/apply_cell_style/table_properties",
+    "gap": "Native DOCX tables replace both direct-cell and HTML transport. Merges/fonts/fills/borders/alignment/header counts/padding implemented. Conditional formatting, complex Excel HTML and pixel-identical widths remain gaps.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:UltTableCopy": {
+    "status": "Partial",
+    "python_replacement": "workbook.table_element; document.insert_legacy_table/apply_cell_style/table_properties",
+    "gap": "Native DOCX tables replace both direct-cell and HTML transport. Merges/fonts/fills/borders/alignment/header counts/padding implemented. Conditional formatting, complex Excel HTML and pixel-identical widths remain gaps.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:UltTableFill": {
+    "status": "Partial",
+    "python_replacement": "document.fill_shell",
+    "gap": "Fixed and variable rows preserve shell styles, reject truncation, and write metadata. Complex premerged shell traversal and complete Word-selection equivalence require additional templates.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:UltTableShell": {
+    "status": "Partial",
+    "python_replacement": "document.fill_shell",
+    "gap": "Fixed and variable rows preserve shell styles, reject truncation, and write metadata. Complex premerged shell traversal and complete Word-selection equivalence require additional templates.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:Cutsections": {
+    "status": "Partial",
+    "python_replacement": "workbook.sections; document.cut_sections",
+    "gap": "Include/delete/reason and bullet-boundary behavior implemented; deleting intervening body tables tested. Markers across different table cells/complex nested ranges explicitly unsupported.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:DeleteSection": {
+    "status": "Partial",
+    "python_replacement": "workbook.sections; document.cut_sections",
+    "gap": "Include/delete/reason and bullet-boundary behavior implemented; deleting intervening body tables tested. Markers across different table cells/complex nested ranges explicitly unsupported.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:DeleteTags": {
+    "status": "Partial",
+    "python_replacement": "workbook.sections; document.cut_sections",
+    "gap": "Include/delete/reason and bullet-boundary behavior implemented; deleting intervening body tables tested. Markers across different table cells/complex nested ranges explicitly unsupported.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:AddSections": {
+    "status": "Partial",
+    "python_replacement": "workbook.postprocess; document.insert_documents",
+    "gap": "Relationship/style-aware DOCX insertion and legacy missing-file message implemented. Tags must be body paragraphs; inserted documents retain master header/footer policy, so distinct appended-section headers need more work.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:SectionFill": {
+    "status": "Partial",
+    "python_replacement": "workbook.postprocess; document.insert_documents",
+    "gap": "Relationship/style-aware DOCX insertion and legacy missing-file message implemented. Tags must be body paragraphs; inserted documents retain master header/footer policy, so distinct appended-section headers need more work.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:Changeheader": {
+    "status": "Partial",
+    "python_replacement": "workbook.postprocess; document.change_headers",
+    "gap": "Five configured section headers/footers and alignment implemented; unlinks inherited headers deliberately. First/even-page header variants and original legacy size/selection behavior need broader parity cases.",
+    "verification": "tests/test_document_features.py: five section headers/footers and alignments; advanced A/B pipeline."
+  },
+  "ReportWriter.vb:XLtoWRDHorAlign": {
+    "status": "Partial",
+    "python_replacement": "workbook.cell_style; document.apply_cell_style",
+    "gap": "Normal openpyxl alignments and border families mapped to DOCX. Excel distributed/conditional layouts, exact enum/line-width correspondence not all verified.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:XLtoWRDVerAlign": {
+    "status": "Partial",
+    "python_replacement": "workbook.cell_style; document.apply_cell_style",
+    "gap": "Normal openpyxl alignments and border families mapped to DOCX. Excel distributed/conditional layouts, exact enum/line-width correspondence not all verified.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:XLtoWRDBrdrThick": {
+    "status": "Partial",
+    "python_replacement": "workbook.cell_style; document.apply_cell_style",
+    "gap": "Normal openpyxl alignments and border families mapped to DOCX. Excel distributed/conditional layouts, exact enum/line-width correspondence not all verified.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:XLtoWRDLineStyle": {
+    "status": "Partial",
+    "python_replacement": "workbook.cell_style; document.apply_cell_style",
+    "gap": "Normal openpyxl alignments and border families mapped to DOCX. Excel distributed/conditional layouts, exact enum/line-width correspondence not all verified.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:CloseClipboard": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:EmptyClipboard": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:OpenClipboard": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:Waitsec": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:ClearClipboard01": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:ClearClipboard02": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:ClearClipboardEl2000": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:ClearClipboard": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:ClearClipboard100": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:CopyTableAgain": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:CopySectionAgain": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:FindLines": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:FindLines2": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:Delextrarows": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ReportWriter.vb:DelextraTOProws": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Direct DOCX assembly, docxcompose insertion and scoped temporary files",
+    "gap": "Selection/clipboard/HTML cleanup transport eliminated by direct file operations. Outcome coverage inherits table/document limitations; original helpers retained in inventory, not certified byte-for-byte.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "ThisAddIn.vb:ThisAddIn_Shutdown": {
+    "status": "Replaced mechanism",
+    "python_replacement": "Workbook.close; temporary file contexts",
+    "gap": "VSTO GC/finalizer shutdown replaced by scoped non-COM resources. Retaining a ribbon would still require host lifecycle code.",
+    "verification": "Workbook and renderer tests."
+  },
+  "WaitProcedure.vb:WaitForClose": {
+    "status": "Partial",
+    "python_replacement": "files.wait_for_file/save_document/save_bytes; renderer.export",
+    "gap": "Existence/owned output readiness and bounded timeouts replace global polling. Exclusive locks differ by platform; Windows lock behavior not tested.",
+    "verification": "tests/test_contracts.py: file existence timeout and output collisions; renderer failure tests."
+  },
+  "WaitProcedure.vb:WaitForOpen": {
+    "status": "Partial",
+    "python_replacement": "files.wait_for_file/save_document/save_bytes; renderer.export",
+    "gap": "Existence/owned output readiness and bounded timeouts replace global polling. Exclusive locks differ by platform; Windows lock behavior not tested.",
+    "verification": "tests/test_contracts.py: file existence timeout and output collisions; renderer failure tests."
+  },
+  "WaitProcedure.vb:WaitForExist": {
+    "status": "Partial",
+    "python_replacement": "files.wait_for_file/save_document/save_bytes; renderer.export",
+    "gap": "Existence/owned output readiness and bounded timeouts replace global polling. Exclusive locks differ by platform; Windows lock behavior not tested.",
+    "verification": "tests/test_contracts.py: file existence timeout and output collisions; renderer failure tests."
+  },
+  "WaitProcedure.vb:FileInUse": {
+    "status": "Partial",
+    "python_replacement": "files.wait_for_file/save_document/save_bytes; renderer.export",
+    "gap": "Existence/owned output readiness and bounded timeouts replace global polling. Exclusive locks differ by platform; Windows lock behavior not tested.",
+    "verification": "tests/test_contracts.py: file existence timeout and output collisions; renderer failure tests."
+  },
+  "WaitProcedure.vb:FileExists": {
+    "status": "Partial",
+    "python_replacement": "files.wait_for_file/save_document/save_bytes; renderer.export",
+    "gap": "Existence/owned output readiness and bounded timeouts replace global polling. Exclusive locks differ by platform; Windows lock behavior not tested.",
+    "verification": "tests/test_contracts.py: file existence timeout and output collisions; renderer failure tests."
+  },
+  "bullets.vb:Bulletthis": {
+    "status": "Partial",
+    "python_replacement": "workbook.transform_bullets",
+    "gap": "All three data transforms, headers/counts, fonts and empty fallback strings implemented. Worksheet layout/glyph fidelity outside supplied contracts needs more input cases.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "bullets.vb:Bulletthis2": {
+    "status": "Partial",
+    "python_replacement": "workbook.transform_bullets",
+    "gap": "All three data transforms, headers/counts, fonts and empty fallback strings implemented. Worksheet layout/glyph fidelity outside supplied contracts needs more input cases.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "bullets.vb:Bulletthis3": {
+    "status": "Partial",
+    "python_replacement": "workbook.transform_bullets",
+    "gap": "All three data transforms, headers/counts, fonts and empty fallback strings implemented. Worksheet layout/glyph fidelity outside supplied contracts needs more input cases.",
+    "verification": "tests/test_workbook.py and tests/test_document_features.py; see docs/VALIDATION.md for cases and limits."
+  },
+  "RWRibbon.vb:Button2_Click": {
+    "status": "Partial",
+    "python_replacement": "cli.main; gui.ReportWriterApp; pipeline.run_workbook",
+    "gap": "Single/batch/import controls implemented in CLI and Tk front end. Access/KillWord excluded; retained ribbon bridge and Windows UI/installer validation are pending.",
+    "verification": "CLI A/B examples and import-only tests pass; Tk UI/launcher not runtime-tested."
+  },
+  "RWRibbon.vb:Button1_Click_1": {
+    "status": "Partial",
+    "python_replacement": "cli.main; gui.ReportWriterApp; pipeline.run_workbook",
+    "gap": "Single/batch/import controls implemented in CLI and Tk front end. Access/KillWord excluded; retained ribbon bridge and Windows UI/installer validation are pending.",
+    "verification": "CLI A/B examples and import-only tests pass; Tk UI/launcher not runtime-tested."
+  },
+  "RWRibbon.vb:Button3_Click": {
+    "status": "Partial",
+    "python_replacement": "cli.main; gui.ReportWriterApp; pipeline.run_workbook",
+    "gap": "Single/batch/import controls implemented in CLI and Tk front end. Access/KillWord excluded; retained ribbon bridge and Windows UI/installer validation are pending.",
+    "verification": "CLI A/B examples and import-only tests pass; Tk UI/launcher not runtime-tested."
+  },
+  "RWRibbon.vb:ChartID_Click": {
+    "status": "Partial",
+    "python_replacement": "CLI --list-charts / workbook._chart_names",
+    "gap": "Lists actual drawing chart names; selected-chart selection and dialog require ribbon/Excel host.",
+    "verification": "tests/test_workbook.py: named demo charts; CLI chart list exercised."
+  }
+}

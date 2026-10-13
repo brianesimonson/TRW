@@ -47,12 +47,42 @@ def main():
     parser.add_argument('manifest', type=Path)
     parser.add_argument('--report', action='append', help='Report ID; repeat for several. Defaults to manifest batch.')
     parser.add_argument('--output', type=Path, default=Path('output'))
+    parser.add_argument('--project-dir', type=Path, help='Portable project root for an XLSM/XLSX workbook (default: workbook folder)')
+    parser.add_argument('--as-of', type=str, help='Date for workbook TODAY(), YYYY-MM-DD')
+    parser.add_argument('--skip-fields', action='store_true', help='Explicitly generate a draft without requested TOC/page-number refresh')
+    parser.add_argument('--update-toc',action=argparse.BooleanOptionalAction,default=None,
+                        help='Override workbook TOC option; --no-update-toc keeps its cached contents')
+    parser.add_argument('--format', choices=['docx','pdf','doc'], help='Override workbook output format')
+    parser.add_argument('--import-only', action='store_true', help='Validate/prepare workbook imports without creating reports')
+    parser.add_argument('--list-charts', action='store_true', help='List actual Excel chart object names without generating reports')
+    parser.add_argument('--soffice', help='LibreOffice executable path')
     args = parser.parse_args()
     os.environ.setdefault('MPLCONFIGDIR', '/tmp/trw-matplotlib')
     os.environ.setdefault('XDG_CACHE_HOME', '/tmp/trw-cache')
     try:
         from .engine import render
         manifest = args.manifest.resolve()
+        if manifest.suffix.lower() in ('.xlsm','.xlsx'):
+            from datetime import date
+            from .pipeline import run_workbook
+            from .renderer import LibreOfficeRenderer
+            if args.list_charts:
+                from .workbook import ReportWorkbook
+                workbook=ReportWorkbook(manifest,project_dir=args.project_dir)
+                try:
+                    print(json.dumps(workbook.chart_names,indent=2))
+                finally:
+                    workbook.close()
+                return 0
+            renderer=LibreOfficeRenderer(args.soffice)
+            results=run_workbook(manifest,output=args.output,project_dir=args.project_dir,report_ids=args.report,
+                                 today=date.fromisoformat(args.as_of) if args.as_of else None,
+                                 skip_fields=args.skip_fields,export_format=args.format,renderer=renderer,
+                                 update_toc=args.update_toc,
+                                 import_only=args.import_only,
+                                 progress=lambda event: print(json.dumps(event),file=sys.stderr))
+            print(json.dumps(results,indent=2))
+            return 0
         config = json.loads(manifest.read_text())
         ids = args.report or config['report_ids']
         results = []

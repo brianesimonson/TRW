@@ -1,0 +1,70 @@
+[
+  {
+    "report": "A",
+    "docx": "ReportWriter_A.docx",
+    "pdf": "ReportWriter_A.pdf",
+    "pages": 6,
+    "table_count": 6,
+    "image_count": 2,
+    "toc": [
+      {
+        "level": 1,
+        "title": "A. Report Overview",
+        "page": 3,
+        "page_label": "3"
+      },
+      {
+        "level": 2,
+        "title": "Analysis of Company A Employees by Age",
+        "page": 3,
+        "page_label": "3"
+      },
+      {
+        "level": 2,
+        "title": "Analysis of Company A Employees by Gender",
+        "page": 4,
+        "page_label": "4"
+      },
+      {
+        "level": 1,
+        "title": "B. Conclusion",
+        "page": 5,
+        "page_label": "5"
+      }
+    ]
+  },
+  {
+    "report": "B",
+    "docx": "ReportWriter_B.docx",
+    "pdf": "ReportWriter_B.pdf",
+    "pages": 5,
+    "table_count": 5,
+    "image_count": 1,
+    "toc": [
+      {
+        "level": 1,
+        "title": "A. Report Overview",
+        "page": 3,
+        "page_label": "3"
+      },
+      {
+        "level": 2,
+        "title": "Analysis of Company B Employees by Age",
+        "page": 3,
+        "page_label": "3"
+      },
+      {
+        "level": 2,
+        "title": "Analysis of Company B Employees by Gender",
+        "page": 4,
+        "page_label": "4"
+      },
+      {
+        "level": 1,
+        "title": "B. Conclusion",
+        "page": 4,
+        "page_label": "4"
+      }
+    ]
+  }
+]
