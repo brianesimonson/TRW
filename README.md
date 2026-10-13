@@ -1,5 +1,11 @@
 # Report Writer Python engine — first implementation
 
+For the complete original-source audit, start with
+[conversion scope and current status](docs/CONVERSION_AUDIT.md), then the
+[function-by-function ledger](docs/FUNCTION_LEDGER.md) and
+[workbook tab catalog](docs/WORKBOOK_TABS.md). No original routine is currently
+certified fully converted; the runnable engine below is a partial prototype.
+
 Generates editable Word documents from an existing Word template, without
 launching Word or Excel. The original VSTO application and uploaded archives have
 not been modified. This is a working first engine, not a complete replacement

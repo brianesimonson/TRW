@@ -1,0 +1,50 @@
+[
+  {
+    "file": "trw/cli.py",
+    "name": "resolve",
+    "start_line": 10,
+    "end_line": 42
+  },
+  {
+    "file": "trw/cli.py",
+    "name": "main",
+    "start_line": 45,
+    "end_line": 71
+  },
+  {
+    "file": "trw/engine.py",
+    "name": "paragraphs",
+    "start_line": 21,
+    "end_line": 34
+  },
+  {
+    "file": "trw/engine.py",
+    "name": "replace_text",
+    "start_line": 37,
+    "end_line": 50
+  },
+  {
+    "file": "trw/engine.py",
+    "name": "chart_image",
+    "start_line": 53,
+    "end_line": 75
+  },
+  {
+    "file": "trw/engine.py",
+    "name": "insert_table",
+    "start_line": 78,
+    "end_line": 113
+  },
+  {
+    "file": "trw/engine.py",
+    "name": "bullet_numbering",
+    "start_line": 116,
+    "end_line": 131
+  },
+  {
+    "file": "trw/engine.py",
+    "name": "render",
+    "start_line": 134,
+    "end_line": 206
+  }
+]
